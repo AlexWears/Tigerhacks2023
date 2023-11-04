@@ -64,6 +64,7 @@ class CameraScene(Scene):
 
         #clock
         self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color_dark)
+        self.dayDisplay = self.smallfont.render('Night ' + str(int(Settings.night + 1)),True,self.color_dark)
 
     def create_scene_sprites(self):
         for c in self.game.characters:
@@ -263,8 +264,9 @@ class CameraScene(Scene):
             Settings.powerUsage = .4
         else: Settings.powerUsage = .1
 
-        #clock
+        #clock and day
         self.game.screen.blit(self.clockTime, (self.WIDTH-100,50))
+        self.game.screen.blit(self.dayDisplay, (self.WIDTH-95,75))
 
         pass
     def event_handler(self, event):
