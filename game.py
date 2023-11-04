@@ -19,6 +19,13 @@ class Game:
 
         self.background_image = 0
 
+        #characters = []
+        #characters.append(Character("Benny", 'H', 1, "benny.bmp"))
+        #characters.append(Character("Charlie", 'H', 1, "charlie.bmp"))
+        #characters.append(Character("Fozie", 'H', 1, "fozie.bmp"))
+        #characters.append(Character("Frank", 'G', 1, "frank.bmp"))
+        #characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
+
     def run(self):
         # Game loop
         running = True
