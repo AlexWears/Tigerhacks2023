@@ -22,7 +22,7 @@ class Location:
         "End Screen": "",
         "A": "backgrounds/lvr00.bmp",
         "B": "",
-        "C": "",
+        "C": "backgrounds/cam6.bmp",
         "D": "backgrounds/cam5.bmp",
         "E": "backgrounds/cam4.bmp",
         "F": "",
