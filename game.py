@@ -37,6 +37,7 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         running = False
+                self.scene.event_handler(event)
             
             self.update_and_display()
 
@@ -45,11 +46,11 @@ class Game:
     def update_and_display(self):
             # Update all sprites
             self.sprites.update()
+            self.scene.update()
 
-            # Draw/render
+            # Draw
             self.full_screen.fill(Settings.BLACK)
             self.full_screen.blit(self.screen, (Settings.screen_left, Settings.screen_top))
-
 
             self.sprites.draw(self.screen)
             self.scene.draw()

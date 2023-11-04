@@ -17,7 +17,7 @@ class Location:
         "J": ["G", "F"]
     }
 
-    location_camera_image = {
+    location_image = {
         "Main Menu": "",
         "End Screen": "",
         "A": "",
@@ -27,7 +27,7 @@ class Location:
         "E": "backgrounds/cam1.bmp",
         "F": "",
         "G": "",
-        "H": "",
+        "H": "backgrounds/cam1.bmp",
         "I": "backgrounds/cam1.bmp",
         "J": ""
     }
@@ -36,12 +36,22 @@ class Scene:
     def __init__(self, game, location):
         self.location = location
         self.game = game
-        self.background_image = pygame.image.load(Location.location_camera_image[location]).convert()
+        self.background_image = pygame.image.load(Location.location_image[location]).convert()
         game.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
+        self.scene_sprites = pygame.sprite.Group()
+
+    def update(self):
+        pass
     
     def draw(self):
         self.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
         self.game.screen.blit(self.background_image, (0, 0))
+
+    def event_handler(self, event):
+        pass
+
+    def create_scene_sprites(self):
+        pass
 
 
     
