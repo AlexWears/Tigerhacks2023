@@ -23,11 +23,11 @@ class Location:
         "A": "",
         "B": "",
         "C": "",
-        "D": "",
-        "E": "backgrounds/cam1.bmp",
+        "D": "backgrounds/cam5.bmp",
+        "E": "backgrounds/cam4.bmp",
         "F": "",
-        "G": "",
-        "H": "backgrounds/cam1.bmp",
+        "G": "backgrounds/cam3.bmp",
+        "H": "backgrounds/cam2.bmp",
         "I": "backgrounds/cam1.bmp",
         "J": ""
     }
