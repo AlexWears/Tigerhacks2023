@@ -79,7 +79,7 @@ class CameraScene(Scene):
         # if self.mouse is hovered on a button it 
         # changes to lighter shade  
         #camera 1
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-350,60,40]) 
             
         else: 
@@ -89,7 +89,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cam1 , (self.WIDTH-157,self.HEIGHT-342))  
 
         #camera 2
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-350,60,40]) 
             
         else: 
@@ -99,7 +99,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cam2 , (self.WIDTH-77,self.HEIGHT-342))  
         
         #camera 3
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-300,60,40]) 
             
         else: 
@@ -109,7 +109,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cam3 , (self.WIDTH-157,self.HEIGHT-292))  
         
         #camera 4
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-300,60,40]) 
             
         else: 
@@ -119,7 +119,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cam4 , (self.WIDTH-77,self.HEIGHT-292))  
         
         #camera 5
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40: 
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-250,60,40]) 
             
         else: 
@@ -129,7 +129,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cam5 , (self.WIDTH-157,self.HEIGHT-242))  
         
         #camera 6
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40: 
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-250,60,40]) 
             
         else: 
@@ -139,7 +139,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cam6 , (self.WIDTH-77,self.HEIGHT-242))  
 
         #door 1
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-150,60,105]) 
             
         else: 
@@ -149,7 +149,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.door1 , (self.WIDTH-157,self.HEIGHT-112))  
 
         #door 2
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
             pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-150,60,105]) 
             
         else: 
@@ -179,7 +179,7 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,(238,44,44),[85,22,30,20]) 
             
         else: 
-            if self.cameraPower == True and self.cameraCurrent == 1:
+            if self.cameraPower == 1 and self.cameraCurrent == 1:
                 pygame.draw.rect(self.game.screen,(238,44,44),[85,22,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[85,22,30,20])
@@ -189,7 +189,7 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,(238,44,44),[15,100,30,20]) 
             
         else: 
-            if self.cameraPower == True and self.cameraCurrent == 2:
+            if self.cameraPower == 1 and self.cameraCurrent == 2:
                 pygame.draw.rect(self.game.screen,(238,44,44),[15,100,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[15,100,30,20])
@@ -199,7 +199,7 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20]) 
             
         else: 
-            if self.cameraPower == True and self.cameraCurrent == 3:
+            if self.cameraPower == 1 and self.cameraCurrent == 3:
                 pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[107,238,30,20])
@@ -209,7 +209,7 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20]) 
             
         else: 
-            if self.cameraPower == True and self.cameraCurrent == 4:
+            if self.cameraPower == 1 and self.cameraCurrent == 4:
                 pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,55,30,20])
@@ -219,7 +219,7 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,(238,44,44),[95,103,30,20]) 
             
         else: 
-            if self.cameraPower == True and self.cameraCurrent == 5:
+            if self.cameraPower == 1 and self.cameraCurrent == 5:
                 pygame.draw.rect(self.game.screen,(238,44,44),[95,103,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,103,30,20])
@@ -229,7 +229,7 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
             
         else: 
-            if self.cameraPower == True and self.cameraCurrent == 6:
+            if self.cameraPower == 1 and self.cameraCurrent == 6:
                 pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[55,205,30,20])
