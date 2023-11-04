@@ -19,6 +19,8 @@ class CameraScene(Scene):
         # dark shade of the button 
         self.color_dark = (100,100,100) 
 
+        self.color_black = (0,0,0)
+
         self.smallfont = pygame.font.SysFont('Corbel',35) 
         self.largefont = pygame.font.SysFont('Corbel',38) 
         self.tinyfont = pygame.font.SysFont('Corbel',20) 
@@ -82,85 +84,103 @@ class CameraScene(Scene):
 
         # if self.mouse is hovered on a button it 
         # changes to lighter shade  
+        #remote
         #camera 1
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-350,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-174,self.HEIGHT-344,60,40]) 
+            self.game.screen.blit(self.cam1 , (self.WIDTH-151,self.HEIGHT-336)) 
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-348,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-346,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-344,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-350,60,40]) 
-
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.cam1 , (self.WIDTH-157,self.HEIGHT-342))  
+            self.game.screen.blit(self.cam1 , (self.WIDTH-157,self.HEIGHT-342)) 
 
         #camera 2
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-350,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-94,self.HEIGHT-344,60,40]) 
+            self.game.screen.blit(self.cam2 , (self.WIDTH-71,self.HEIGHT-336))
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-348,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-346,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-344,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-350,60,40]) 
-
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.cam2 , (self.WIDTH-77,self.HEIGHT-342))  
+            self.game.screen.blit(self.cam2 , (self.WIDTH-77,self.HEIGHT-342)) 
         
         #camera 3
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-300,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-174,self.HEIGHT-294,60,40]) 
+            self.game.screen.blit(self.cam3 , (self.WIDTH-151,self.HEIGHT-286)) 
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-298,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-296,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-294,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-300,60,40]) 
-
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.cam3 , (self.WIDTH-157,self.HEIGHT-292))  
+            self.game.screen.blit(self.cam3 , (self.WIDTH-157,self.HEIGHT-292))  
         
         #camera 4
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-300,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-94,self.HEIGHT-294,60,40]) 
+            self.game.screen.blit(self.cam4 , (self.WIDTH-71,self.HEIGHT-286)) 
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-298,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-296,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-294,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-300,60,40]) 
-
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.cam4 , (self.WIDTH-77,self.HEIGHT-292))  
+            self.game.screen.blit(self.cam4 , (self.WIDTH-77,self.HEIGHT-292)) 
         
         #camera 5
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-250,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-174,self.HEIGHT-244,60,40]) 
+            self.game.screen.blit(self.cam5 , (self.WIDTH-151,self.HEIGHT-236)) 
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-248,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-246,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-244,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-250,60,40]) 
+            self.game.screen.blit(self.cam5 , (self.WIDTH-157,self.HEIGHT-242)) 
 
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.cam5 , (self.WIDTH-157,self.HEIGHT-242))  
         
         #camera 6
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-250,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-94,self.HEIGHT-244,60,40]) 
+            self.game.screen.blit(self.cam6 , (self.WIDTH-71,self.HEIGHT-236)) 
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-248,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-246,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-244,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-250,60,40]) 
-        
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.cam6 , (self.WIDTH-77,self.HEIGHT-242))  
+            self.game.screen.blit(self.cam6 , (self.WIDTH-77,self.HEIGHT-242)) 
 
         #door 1
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-150,60,105]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-174,self.HEIGHT-144,60,105]) 
+            self.game.screen.blit(self.door1 , (self.WIDTH-151,self.HEIGHT-104)) 
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-148,60,105]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-146,60,105]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-144,60,105]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-150,60,105]) 
-        
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.door1 , (self.WIDTH-157,self.HEIGHT-112))  
+            self.game.screen.blit(self.door1 , (self.WIDTH-157,self.HEIGHT-112)) 
 
         #door 2
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
-            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-150,60,105]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-94,self.HEIGHT-144,60,105]) 
+            self.game.screen.blit(self.door2 , (self.WIDTH-71,self.HEIGHT-104))  
             
         else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-148,60,105]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-146,60,105]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-144,60,105])
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-150,60,105]) 
-        
-        # superimposing the text onto our button 
-        self.game.screen.blit(self.door2 , (self.WIDTH-77,self.HEIGHT-112))  
+            self.game.screen.blit(self.door2 , (self.WIDTH-77,self.HEIGHT-112))  
 
         #room map
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(50, 50, 180, 180),  2, 0)
@@ -367,8 +387,6 @@ class CameraScene(Scene):
                 elif Settings.door2power == 1:
                     Settings.door2power = 0
 
-
-        
     def update(self):
         super().update()
         Location.location_image["A"] = "backgrounds/lvr" + str(Settings.door1power) + str(Settings.door2power) + ".bmp"
