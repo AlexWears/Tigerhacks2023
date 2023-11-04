@@ -64,6 +64,7 @@ class Game:
             self.scene.update()
             if isinstance(self.scene, CameraScene):
                 if pygame.time.get_ticks() >= Settings.next_movement: #if it is time for a movement opportunity
+                    print("Movement opportunity\n")
                     self.character_sprites.update()
                     Settings.next_movement = pygame.time.get_ticks() + Settings.time_between_moves
 
