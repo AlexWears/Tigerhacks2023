@@ -58,7 +58,7 @@ class Settings:
     night = 0
 
     # Movement opportunity (milliseconds)
-    time_between_moves = 5000
+    time_between_moves = 1000
     next_movement = 0
 
     @classmethod

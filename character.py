@@ -1,5 +1,6 @@
 import pygame
 import secrets
+import random
 
 from settings import Settings
 from scene import Location
@@ -22,12 +23,13 @@ class Character(pygame.sprite.Sprite):
 
 
     def update(self):
-        
-        print("Movement opportunity\n")
         if (secrets.randbelow(20) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 20) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
-            print(self.name + " has taken the opportunity to move\n")
+            self.prev_loc = self.loc
             #take even chance to go to any adjacent room (figuring this out)
-            pass    
+            self.loc = random.choice(Location.adjacent_locations[self.loc])
+            print(self.name + " has taken the opportunity to move from " + self.prev_loc + " " + self.loc + ".\n")
+
+            pass
         pass
 
     def draw(self):
