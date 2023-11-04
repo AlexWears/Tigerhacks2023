@@ -11,7 +11,6 @@ class Character(pygame.sprite.Sprite):
         self.image = pygame.image.load(".")
         self.rect = self.image.get_rect()
         self.rect.bottomleft = (self.settings.width/2, self.settings.height/2)
-        self.health = 0
         self.loc = 0
 
 
