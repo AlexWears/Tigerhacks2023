@@ -362,6 +362,9 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 6
                 self.game.scene = CameraScene(self.game, "C")
 
+            if Settings.cameraPower == 0:
+                self.game.scene = CameraScene(self.game, "A")
+
             #doors
             #1
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
