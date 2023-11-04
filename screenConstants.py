@@ -12,8 +12,13 @@ res = (720,720)
 # opens up a window 
 screen = pygame.display.set_mode(res) 
   
-clock = pygame.time.Clock()     # For syncing the FPS
-clock.tick(Settings.FPS)
+#clock stuff
+clock = pygame.time.Clock()
+frame_count = 0
+frame_rate = 30
+start_time = 0
+TIMEEVENT, t, seconds = pygame.USEREVENT+1, 1000, []
+pygame.time.set_timer(TIMEEVENT, t)
 
 # white color 
 color = (255,255,255) 
@@ -73,6 +78,7 @@ cameraPower = 0
 cameraCurrent = 0
 powerLevel = 100
 powerPercent = smallfont.render(str(powerLevel) + '%',True,color)
+powerUsage = .01
 
 while True: 
       
@@ -341,13 +347,17 @@ while True:
     pygame.draw.rect(screen,(0,201,87),[110,295,20,30])
     if cameraPower + door1power + door2power == 1:
         pygame.draw.rect(screen,(0,201,87),[130,295,20,30])
+        powerUsage = .02
     elif cameraPower + door1power + door2power == 2:
         pygame.draw.rect(screen,(0,201,87),[130,295,20,30])
         pygame.draw.rect(screen,(255,215,0),[150,295,20,30])
+        powerUsage = .03
     elif cameraPower + door1power + door2power == 3:
         pygame.draw.rect(screen,(0,201,87),[130,295,20,30])
         pygame.draw.rect(screen,(255,215,0),[150,295,20,30])
         pygame.draw.rect(screen,(238,44,44),[170,295,20,30])
+        powerUsage = .04
+    else: powerUsage = .01
 
     # updates the frames of the game 
     pygame.display.update()
