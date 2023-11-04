@@ -3,6 +3,7 @@ from settings import Settings
 from scene import Location, Scene
 from character import Character
 from camera_scene import CameraScene
+from night_divider import NightDividerScene
 
 class Game:
     # initialize pygame and create window
@@ -23,7 +24,8 @@ class Game:
 
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
-        self.scene = CameraScene(self, "A")
+        #self.scene = CameraScene(self, "A")
+        self.scene = NightDividerScene(self, "")
 
         self.characters = []
         

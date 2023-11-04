@@ -54,5 +54,4 @@ class Scene:
     def create_scene_sprites(self):
         pass
 
-
     
