@@ -175,7 +175,7 @@ class CameraScene(Scene):
         #you word
         self.game.screen.blit(self.you, (144,85)) 
         #camera 1
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
             pygame.draw.rect(self.game.screen,(238,44,44),[85,22,30,20]) 
             
         else: 
@@ -185,7 +185,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[85,22,30,20])
         self.game.screen.blit(self.mapcam1, (88,28)) 
         #camera 2
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40:
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40:
             pygame.draw.rect(self.game.screen,(238,44,44),[15,100,30,20]) 
             
         else: 
@@ -195,7 +195,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[15,100,30,20])
         self.game.screen.blit(self.mapcam2, (18,105)) 
         #camera 3
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
             pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20]) 
             
         else: 
@@ -205,7 +205,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[107,238,30,20])
         self.game.screen.blit(self.mapCam3, (110,244)) 
         #camera 4
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40:  
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40:  
             pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20]) 
             
         else: 
@@ -215,7 +215,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,55,30,20])
         self.game.screen.blit(self.mapCam4, (98,61)) 
         #camera 5
-        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40:  
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40:  
             pygame.draw.rect(self.game.screen,(238,44,44),[95,103,30,20]) 
             
         else: 
@@ -225,7 +225,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,103,30,20])
         self.game.screen.blit(self.mapCam5, (98,109)) 
         #camera 6
-        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40:
+        if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40:
             pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
             
         else: 
@@ -302,7 +302,7 @@ class CameraScene(Scene):
         if event.type == pygame.MOUSEBUTTONDOWN: 
         #cameras
             #1
-            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 1
@@ -312,7 +312,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 1:
                     self.cameraCurrent = 1
             #2
-            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 2
@@ -322,7 +322,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 2:
                     self.cameraCurrent = 2
             #3
-            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 3
@@ -332,7 +332,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 3:
                     self.cameraCurrent = 3 
             #4
-            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 4
@@ -342,7 +342,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 4:
                     self.cameraCurrent = 4
             #5
-            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 5
@@ -352,7 +352,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 5:
                     self.cameraCurrent = 5
             #6
-            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 6
@@ -364,13 +364,13 @@ class CameraScene(Scene):
 
             #doors
             #1
-            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
                 if self.door1power == 0: 
                     self.door1power = 1
                 elif self.door1power == 1:
                     self.door1power = 0
             #2
-            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-93 <= self.mouse[1] <= self.HEIGHT-93+105: 
                 if self.door2power == 0: 
                     self.door2power = 1
                 elif self.door2power == 1:
