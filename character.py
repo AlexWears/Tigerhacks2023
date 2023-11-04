@@ -1,9 +1,12 @@
 import pygame
+import secrets
+
 from settings import Settings
+from scene import Location
 
 
 class Character(pygame.sprite.Sprite):
-    #name is character name (string), s_loc is start location (a character in string A-J), aggression is an integer, sprite is sprite bmp filename
+    #name is character name (string), s_loc is start location (a character in string A-J), aggression is a list of integers, sprite is sprite bmp filename
     def __init__(self, game, name, s_loc, aggression, sprite):
         pygame.sprite.Sprite.__init__(self)
         self.game = game
@@ -19,7 +22,10 @@ class Character(pygame.sprite.Sprite):
 
 
     def update(self):
-        #logic for moving around rooms
+        if pygame.time.get_ticks() >= next_movement: #if it is time for a movement opportunity
+            if (secrets.randbelow(9) + 1) <= self.aggression[night]: #if random number (between 1 and 10) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
+                #take even chance to go to any adjacent room (figuring this out)
+            next_movement = pygame.time.get_ticks() + Settings.time_between_moves
         pass
 
     def draw(self):
