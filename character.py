@@ -22,18 +22,20 @@ class Character(pygame.sprite.Sprite):
 
 
     def update(self):
-        if pygame.time.get_ticks() >= next_movement: #if it is time for a movement opportunity
-            if (secrets.randbelow(9) + 1) <= self.aggression[night]: #if random number (between 1 and 10) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
+        if pygame.time.get_ticks() >= Settings.next_movement: #if it is time for a movement opportunity
+            if (secrets.randbelow(10) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 10) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
                 #take even chance to go to any adjacent room (figuring this out)
-            next_movement = pygame.time.get_ticks() + Settings.time_between_moves
+                pass
+            Settings.next_movement = pygame.time.get_ticks() + Settings.time_between_moves
         pass
 
     def draw(self):
-        for c in game.characters:
-            if c.loc == Settings.current_screen:
-                c.on_screen = True
-            else:
-                c.on_screen = False
+        pass
+        #for c in game.characters:
+         #   if c.loc == Settings.current_screen:
+          #      c.on_screen = True
+           # else:
+            #    c.on_screen = False
 
 
 
