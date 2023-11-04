@@ -23,6 +23,7 @@ class CameraScene(Scene):
         self.largefont = pygame.font.SysFont('Corbel',38) 
         self.tinyfont = pygame.font.SysFont('Corbel',20) 
         self.minifont = pygame.font.SysFont('Corbel',13)
+        self.hugefont = pygame.font.SysFont('Corbel',50)
 
         # rendering a text written in 
         # this font 
@@ -48,6 +49,12 @@ class CameraScene(Scene):
         self.mapCam4 = self.minifont.render('Cam 4', True, self.color)
         self.mapCam5 = self.minifont.render('Cam 5', True, self.color)
         self.mapCam6 = self.minifont.render('Cam 6', True, self.color)
+        self.bathroom = self.hugefont.render('Bathroom',True,self.color)
+        self.bedroom = self.hugefont.render('Bedroom',True,self.color)
+        self.kitchen = self.hugefont.render('Kitchen',True,self.color)
+        self.backyard = self.hugefont.render('Backyard',True,self.color)
+        self.sideyard = self.hugefont.render('Sideyard',True,self.color)
+        self.driveway = self.hugefont.render('Driveway',True,self.color)
         
         #power bar words
         self.power = self.smallfont.render('Power left:', True, self.color_dark)
@@ -57,6 +64,7 @@ class CameraScene(Scene):
 
         #clock
         self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color_dark)
+        self.dayDisplay = self.smallfont.render('Night ' + str(int(Settings.night + 1)),True,self.color_dark)
 
     def create_scene_sprites(self):
         for c in self.game.characters:
@@ -177,6 +185,7 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 1:
                 pygame.draw.rect(self.game.screen,(238,44,44),[85,22,30,20]) 
+                self.game.screen.blit(self.sideyard, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[85,22,30,20])
         self.game.screen.blit(self.mapcam1, (88,28)) 
@@ -187,6 +196,7 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 2:
                 pygame.draw.rect(self.game.screen,(238,44,44),[15,100,30,20]) 
+                self.game.screen.blit(self.backyard, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[15,100,30,20])
         self.game.screen.blit(self.mapcam2, (18,105)) 
@@ -197,6 +207,7 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 3:
                 pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20]) 
+                self.game.screen.blit(self.driveway, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[107,238,30,20])
         self.game.screen.blit(self.mapCam3, (110,244)) 
@@ -207,6 +218,7 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 4:
                 pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20]) 
+                self.game.screen.blit(self.bathroom, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,55,30,20])
         self.game.screen.blit(self.mapCam4, (98,61)) 
@@ -217,6 +229,7 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 5:
                 pygame.draw.rect(self.game.screen,(238,44,44),[95,103,30,20]) 
+                self.game.screen.blit(self.bedroom, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,103,30,20])
         self.game.screen.blit(self.mapCam5, (98,109)) 
@@ -227,6 +240,7 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 6:
                 pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
+                self.game.screen.blit(self.kitchen, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[55,205,30,20])
         self.game.screen.blit(self.mapCam6, (58,211))
@@ -250,8 +264,9 @@ class CameraScene(Scene):
             Settings.powerUsage = .4
         else: Settings.powerUsage = .1
 
-        #clock
+        #clock and day
         self.game.screen.blit(self.clockTime, (self.WIDTH-100,50))
+        self.game.screen.blit(self.dayDisplay, (self.WIDTH-95,75))
 
         pass
     def event_handler(self, event):

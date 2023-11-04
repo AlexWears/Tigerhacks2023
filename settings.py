@@ -8,58 +8,59 @@ class Settings:
     RED = (255, 0, 0)
     GREEN = (0, 255, 0)
     BLUE = (0, 0, 255)
-
-    # Display Settings
-
-    # The height of the game screen
-    height = 360
-    width = 480
+    
     FPS = 30
 
-    # Where the screen is at compared to the full display
-    screen_left = 0
-    screen_right = 0
-    screen_top = 0
-    screen_bottom = 0
+    @classmethod
+    def reset_settings(self):
+        # The height of the game screen
+        self.height = 360
+        self.width = 480
 
-    # Character aggression settings [night 1, 2, 3, 4, 5] (between 1 and 20) (-1 to disable character)
-    benny_ag =   [1,2,6,5,16]
-    charlie_ag = [1,5,4,6,12]
-    fozie_ag =   [3,0,2,5,10]
-    frank_ag =   [0,1,2,3,4]
-    j0mr_ag = [-1,-1,-1,-1,-1]
+        # Where the screen is at compared to the full display
+        self.screen_left = 0
+        self.screen_right = 0
+        self.screen_top = 0
+        self.screen_bottom = 0
 
-    # Character start locations
-    benny_s_loc = "H"
-    charlie_s_loc = "H"
-    fozie_s_loc = "H"
-    frank_s_loc = "G"
-    j0mr_s_loc = 0
+        # Character aggression settings [night 1, 2, 3, 4, 5] (between 1 and 20) (-1 to disable character)
+        self.benny_ag =   [1,2,6,5,16]
+        self.charlie_ag = [1,5,4,6,12]
+        self.fozie_ag =   [3,0,2,5,10]
+        self.frank_ag =   [0,1,2,3,4]
+        self.j0mr_ag = [-1,-1,-1,-1,-1]
 
-    #Power settings
-    door1power = 0
-    door2power = 0
-    cameraPower = 0
-    cameraCurrent = 0
-    powerLevel = 100
-    powerUsage = .1
+        # Character start locations
+        self.benny_s_loc = "H"
+        self.charlie_s_loc = "H"
+        self.fozie_s_loc = "H"
+        self.frank_s_loc = "G"
+        self.j0mr_s_loc = 0
 
-    #Timer
-    old_time = 0
-    new_time = 0
-    clock_time = 12
-    new_clock_time = 0
-    old_clock_time = 0
+        #Power settings
+        self.door1power = 0
+        self.door2power = 0
+        self.cameraPower = 0
+        self.cameraCurrent = 0
+        self.powerLevel = 100
+        self.powerUsage = .1
 
-    # Camera settings
-    current_screen = 'A' #default to main room
+        #Timer
+        self.old_time = 0
+        self.new_time = 0
+        self.clock_time = 12
+        self.new_clock_time = 0
+        self.old_clock_time = 0
 
-    # Current Night (0 through 4)
-    night = 0
+        # Camera settings
+        self.current_screen = 'A' #default to main room
 
-    # Movement opportunity (milliseconds)
-    time_between_moves = 1000
-    next_movement = 0
+        # Current Night (0 through 4)
+        self.night = 0
+
+        # Movement opportunity (milliseconds)
+        self.time_between_moves = 5000
+        self.next_movement = 0
 
     @classmethod
     def define_screen(self, display_height, display_width):

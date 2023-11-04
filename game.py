@@ -9,6 +9,10 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.mixer.init()  # For sound
+        pygame.mixer.music.load("sounds/Grinch's Ultimatum - Pilotredsun [Extended].mp3")
+        pygame.mixer.music.set_volume(.1)
+        pygame.mixer.music.play(-1)
+        Settings.reset_settings()
         self.full_screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Five Nights at JimR's")
         self.clock = pygame.time.Clock()     # For syncing the FPS
