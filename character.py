@@ -24,8 +24,11 @@ class Character(pygame.sprite.Sprite):
 
     def draw(self):
         for c in game.characters:
-            if c.loc == game.current_screen:
+            if c.loc == Settings.current_screen:
                 c.on_screen = True
+            else:
+                c.on_screen = False
+
 
 
 
