@@ -23,7 +23,9 @@ class Character(pygame.sprite.Sprite):
 
     def update(self):
         if pygame.time.get_ticks() >= Settings.next_movement: #if it is time for a movement opportunity
+            print("Movement opportunity\n")
             if (secrets.randbelow(10) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 10) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
+                print(self.name + " has taken the opportunity to move\n")
                 #take even chance to go to any adjacent room (figuring this out)
                 pass
             Settings.next_movement = pygame.time.get_ticks() + Settings.time_between_moves
