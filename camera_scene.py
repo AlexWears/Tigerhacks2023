@@ -41,7 +41,7 @@ class CameraScene(Scene):
         self.doors = self.smallfont.render('Doors', True, self.color)
 
         #map labels
-        self.you = self.tinyfont.render('You', True, self.color)
+        self.you = self.tinyfont.render('You', True, self.color_dark)
         self.mapcam1 = self.minifont.render('Cam 1', True, self.color)
         self.mapcam2 = self.minifont.render('Cam 2', True, self.color)
         self.mapCam3 = self.minifont.render('Cam 3', True, self.color)
@@ -54,6 +54,9 @@ class CameraScene(Scene):
         self.usage = self.smallfont.render('Usage:',True, self.color_dark)
         #varables for power
         self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
+
+        #clock
+        self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color_dark)
 
     def create_scene_sprites(self):
         for c in self.game.characters:
@@ -247,6 +250,9 @@ class CameraScene(Scene):
             Settings.powerUsage = .4
         else: Settings.powerUsage = .1
 
+        #clock
+        self.game.screen.blit(self.clockTime, (self.WIDTH-100,50))
+
         pass
     def event_handler(self, event):
         # defining a font 
@@ -357,5 +363,12 @@ class CameraScene(Scene):
             Settings.powerLevel -= Settings.powerUsage
             Settings.old_time = Settings.new_time
             self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
+        Settings.new_clock_time = pygame.time.get_ticks()
+        if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
+            Settings.old_clock_time = Settings.new_clock_time
+            if Settings.clock_time == 12:
+                Settings.clock_time = 1
+            else: Settings.clock_time += 1
+            self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color_dark)
 
 

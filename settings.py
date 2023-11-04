@@ -47,6 +47,9 @@ class Settings:
     #Timer
     old_time = 0
     new_time = 0
+    clock_time = 12
+    new_clock_time = 0
+    old_clock_time = 0
 
     # Camera settings
     current_screen = 'A' #default to main room
