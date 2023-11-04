@@ -19,7 +19,7 @@ class Game:
 
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
-        self.scene = CameraScene(self, "E")
+        self.scene = CameraScene(self, "A")
 
         self.characters = []
         

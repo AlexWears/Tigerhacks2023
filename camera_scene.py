@@ -1,5 +1,5 @@
 import pygame
-from scene import Scene
+from scene import Scene, Location
 from settings import Settings
 
 class CameraScene(Scene):
@@ -53,13 +53,8 @@ class CameraScene(Scene):
         self.power = self.smallfont.render('Power left:', True, self.color)
         self.usage = self.smallfont.render('Usage:',True, self.color)
         #varables for power
-        self.door1power = 0
-        self.door2power = 0
-        self.cameraPower = 0
-        self.cameraCurrent = 0
         self.powerLevel = 100
         self.powerPercent = self.smallfont.render(str(self.powerLevel) + '%',True,self.color)
-        self.powerUsage = .01
 
         
     def create_scene_sprites(self):
@@ -305,6 +300,8 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 0
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 1:
                     Settings.cameraCurrent = 1
+                self.game.scene = CameraScene(self.game, "I")
+
             #2
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
                 if Settings.cameraPower == 0: 
@@ -315,6 +312,8 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 0
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 2:
                     Settings.cameraCurrent = 2
+                self.game.scene = CameraScene(self.game, "H")
+
             #3
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
                 if Settings.cameraPower == 0: 
@@ -325,6 +324,8 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 0
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 3:
                     Settings.cameraCurrent = 3 
+                self.game.scene = CameraScene(self.game, "G")
+
             #4
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-243 <= self.mouse[1] <= self.HEIGHT-243+40: 
                 if Settings.cameraPower == 0: 
@@ -335,6 +336,8 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 0
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 4:
                     Settings.cameraCurrent = 4
+                self.game.scene = CameraScene(self.game, "E")
+
             #5
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
                 if Settings.cameraPower == 0: 
@@ -345,6 +348,8 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 0
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 5:
                     Settings.cameraCurrent = 5
+                self.game.scene = CameraScene(self.game, "D")
+
             #6
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-193 <= self.mouse[1] <= self.HEIGHT-193+40: 
                 if Settings.cameraPower == 0: 
@@ -355,6 +360,10 @@ class CameraScene(Scene):
                     Settings.cameraCurrent = 0
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 6:
                     Settings.cameraCurrent = 6
+                self.game.scene = CameraScene(self.game, "C")
+
+            if Settings.cameraPower == 0:
+                self.game.scene = CameraScene(self.game, "A")
 
             #doors
             #1
@@ -369,6 +378,9 @@ class CameraScene(Scene):
                     Settings.door2power = 1
                 elif Settings.door2power == 1:
                     Settings.door2power = 0
+
+            
+            Location.location_image["A"] = "backgrounds/lvr" + str(Settings.door1power) + str(Settings.door2power) + ".bmp"
 
         
         
