@@ -64,7 +64,8 @@ class Game:
             self.sprites.draw(self.screen)
 
             # Done after drawing everything to the screen
-            pygame.display.flip()       
+            pygame.display.flip()
+            pygame.display.update()
 
 
 

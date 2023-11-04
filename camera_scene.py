@@ -69,6 +69,7 @@ class CameraScene(Scene):
                 pass
 
     def draw(self):
+        super().draw()
         self.mouse = pygame.mouse.get_pos() 
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-200, self.HEIGHT-400, 180, 380),  0, 3)
     
