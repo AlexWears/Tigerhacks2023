@@ -20,7 +20,7 @@ class Location:
     location_image = {
         "Main Menu": "",
         "End Screen": "",
-        "A": "backgrounds/lvr-open-open.bmp",
+        "A": "backgrounds/lvr00.bmp",
         "B": "",
         "C": "",
         "D": "backgrounds/cam5.bmp",
@@ -44,6 +44,7 @@ class Scene:
         pass
     
     def draw(self):
+        self.background_image = pygame.image.load(Location.location_image[self.location]).convert()
         self.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
         self.game.screen.blit(self.background_image, (0, 0))
 
