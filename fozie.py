@@ -10,7 +10,7 @@ class Fozie(Character):
         self.image = pygame.image.load("sprites/fozie.bmp")
         self.rect = self.image.get_rect()
         self.rect.bottomleft = (self.settings.width/2, self.settings.height/2)
-        self.loc = 1
+        self.loc = 'H'
     
     def blit_fozie(self):
         self.screen.blit(self.image, self.rect)
