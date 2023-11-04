@@ -34,6 +34,14 @@ class Settings:
     frank_s_loc = "G"
     j0mr_s_loc = 0
 
+    #Power settings
+    door1power = 0
+    door2power = 0
+    cameraPower = 0
+    cameraCurrent = 0
+    powerLevel = 100
+    powerUsage = .01
+
     # Camera settings
     current_screen = 'A' #default to main room
 
