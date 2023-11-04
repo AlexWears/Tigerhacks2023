@@ -25,7 +25,7 @@ class Character(pygame.sprite.Sprite):
     def update(self):
         if (secrets.randbelow(20) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 20) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
             self.prev_loc = self.loc
-            #take even chance to go to any adjacent room (figuring this out)
+            #take even random chance to go to any adjacent room
             self.loc = random.choice(Location.adjacent_locations[self.loc])
             print(self.name + " has taken the opportunity to move from " + self.prev_loc + " " + self.loc + ".\n")
         else:
