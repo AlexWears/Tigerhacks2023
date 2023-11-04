@@ -314,7 +314,7 @@ class CameraScene(Scene):
 
         if event.type == pygame.MOUSEBUTTONDOWN: 
             #power
-            if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-327 <= self.mouse[1] <= self.HEIGHT-327+30: 
+            if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-390+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-390+30+Settings.screen_top: 
                 pygame.quit()
         #cameras
             #1
