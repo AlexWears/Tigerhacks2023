@@ -19,7 +19,7 @@ class Game:
 
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
-        self.scene = Scene(self, "E")
+        self.scene = CameraScene(self, "E")
 
         characters = []
         characters.append(Character("Benny", 'H', 1, "sprites/benny.bmp"))

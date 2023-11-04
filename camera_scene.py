@@ -16,6 +16,9 @@ class CameraScene(Scene):
     def draw(self):
         pass
 
+    def event_handler(self, event):
+        
+
         
         
 
