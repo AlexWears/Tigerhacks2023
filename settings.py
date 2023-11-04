@@ -21,11 +21,11 @@ class Settings:
     screen_bottom = 0
 
     # Character settings
-    benny_init_ag = 1
-    charlie_init_ag = 1
-    fozie_init_ag = 1
-    frank_init_ag = 1
-    j0mr_init_ag = 1
+    benny_init_ag = [1,1,1,1,1]
+    charlie_init_ag = [1,1,1,1,1]
+    fozie_init_ag = [1,1,1,1,1]
+    frank_init_ag = [1,1,1,1,1]
+    j0mr_init_ag = [1,1,1,1,1]
 
     @classmethod
     def define_screen(self, display_height, display_width):
