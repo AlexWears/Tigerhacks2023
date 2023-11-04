@@ -2,11 +2,21 @@ import pygame
 
 class Settings:
     
+    # Some Basic Colors
+    WHITE = (255, 255, 255)
+    BLACK = (0, 0, 0)
+    RED = (255, 0, 0)
+    GREEN = (0, 255, 0)
+    BLUE = (0, 0, 255)
+
     # Display Settings
+
+    # The height of the game screen
     height = 360
     width = 480
     FPS = 30
 
+    # Where the screen is at compared to the full display
     screen_left = 0
     screen_right = 0
     screen_top = 0
