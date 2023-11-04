@@ -220,7 +220,6 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 1:
                 pygame.draw.rect(self.game.screen,(238,44,44),[85,22,30,20]) 
-                self.game.screen.blit(self.sideyard, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[85,22,30,20])
         self.game.screen.blit(self.mapcam1, (88,28)) 
@@ -231,7 +230,6 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 2:
                 pygame.draw.rect(self.game.screen,(238,44,44),[15,100,30,20]) 
-                self.game.screen.blit(self.backyard, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[15,100,30,20])
         self.game.screen.blit(self.mapcam2, (18,105)) 
@@ -241,8 +239,7 @@ class CameraScene(Scene):
             
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 3:
-                pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20]) 
-                self.game.screen.blit(self.driveway, (self.WIDTH/2,self.HEIGHT-50)) 
+                pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20])  
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[107,238,30,20])
         self.game.screen.blit(self.mapCam3, (110,244)) 
@@ -252,8 +249,7 @@ class CameraScene(Scene):
             
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 4:
-                pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20]) 
-                self.game.screen.blit(self.bathroom, (self.WIDTH/2,self.HEIGHT-50)) 
+                pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20])  
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,55,30,20])
         self.game.screen.blit(self.mapCam4, (98,61)) 
@@ -264,7 +260,6 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 5:
                 pygame.draw.rect(self.game.screen,(238,44,44),[95,103,30,20]) 
-                self.game.screen.blit(self.bedroom, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,103,30,20])
         self.game.screen.blit(self.mapCam5, (98,109)) 
@@ -275,10 +270,17 @@ class CameraScene(Scene):
         else: 
             if Settings.cameraPower == 1 and Settings.cameraCurrent == 6:
                 pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
-                self.game.screen.blit(self.kitchen, (self.WIDTH/2,self.HEIGHT-50)) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[55,205,30,20])
         self.game.screen.blit(self.mapCam6, (58,211))
+
+        #camera labels
+        if Settings.cameraCurrent == 1: self.game.screen.blit(self.sideyard, (self.WIDTH/2,self.HEIGHT-50)) 
+        elif Settings.cameraCurrent == 2: self.game.screen.blit(self.backyard, (self.WIDTH/2,self.HEIGHT-50)) 
+        elif Settings.cameraCurrent == 3: self.game.screen.blit(self.driveway, (self.WIDTH/2,self.HEIGHT-50))
+        elif Settings.cameraCurrent == 4: self.game.screen.blit(self.bathroom, (self.WIDTH/2,self.HEIGHT-50))
+        elif Settings.cameraCurrent == 5: self.game.screen.blit(self.bedroom, (self.WIDTH/2,self.HEIGHT-50))
+        elif Settings.cameraCurrent == 6: self.game.screen.blit(self.kitchen, (self.WIDTH/2,self.HEIGHT-50))
 
         #power bar
         pygame.draw.rect(self.game.screen,self.color_dark,[18,268,170,30])
