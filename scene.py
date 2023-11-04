@@ -20,7 +20,7 @@ class Location:
     location_image = {
         "Main Menu": "",
         "End Screen": "",
-        "A": "",
+        "A": "backgrounds/lvr-open-open.bmp",
         "B": "",
         "C": "",
         "D": "backgrounds/cam5.bmp",

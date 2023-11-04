@@ -22,10 +22,10 @@ class Game:
         self.scene = CameraScene(self, "E")
 
         characters = []
-        characters.append(Character("Benny", self,'H', Settings.benny_ag, "sprites/benny.bmp"))
-        characters.append(Character("Charlie", self, 'H', Settings.charlie_ag, "sprites/charlie.bmp"))
-        characters.append(Character("Fozie", self, 'H', Settings.fozie_ag, "sprites/fozie.bmp"))
-        characters.append(Character("Frank", self, 'G', Settings.frank_ag, "sprites/frank.bmp"))
+        characters.append(Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.bmp"))
+        characters.append(Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.bmp"))
+        characters.append(Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.bmp"))
+        characters.append(Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.bmp"))
         # characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
 
         self.character_sprites = pygame.sprite.Group(characters)
