@@ -284,23 +284,23 @@ class CameraScene(Scene):
         elif Settings.cameraCurrent == 6: self.game.screen.blit(self.kitchen, (self.WIDTH/2,self.HEIGHT-50))
 
         #power bar
-        pygame.draw.rect(self.game.screen,self.color_dark,[18,268,170,30])
-        pygame.draw.rect(self.game.screen,self.color_dark,[18,298,75,25])
-        self.game.screen.blit(self.power, (20,270)) 
-        self.game.screen.blit(self.powerPercent, (135,270))
-        self.game.screen.blit(self.usage, (20,295)) 
-        pygame.draw.rect(self.game.screen,(0,201,87),[110,295,20,30])
+        pygame.draw.rect(self.game.screen,self.color_dark,[18,self.HEIGHT-90,170,30])
+        pygame.draw.rect(self.game.screen,self.color_dark,[18,self.HEIGHT-50,75,25])
+        self.game.screen.blit(self.power, (20,self.HEIGHT-90)) 
+        self.game.screen.blit(self.powerPercent, (135,self.HEIGHT-90))
+        self.game.screen.blit(self.usage, (20,self.HEIGHT-50)) 
+        pygame.draw.rect(self.game.screen,(0,201,87),[100,self.HEIGHT-52,20,30])
         if Settings.cameraPower + Settings.door1power + Settings.door2power == 1:
-            pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
+            pygame.draw.rect(self.game.screen,(0,201,87),[120,self.HEIGHT-52,20,30])
             Settings.powerUsage = .2
         elif Settings.cameraPower + Settings.door1power + Settings.door2power == 2:
-            pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
-            pygame.draw.rect(self.game.screen,(255,215,0),[150,295,20,30])
+            pygame.draw.rect(self.game.screen,(0,201,87),[120,self.HEIGHT-52,20,30])
+            pygame.draw.rect(self.game.screen,(255,215,0),[140,self.HEIGHT-52,20,30])
             Settings.powerUsage = .3
         elif Settings.cameraPower + Settings.door1power + Settings.door2power == 3:
-            pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
-            pygame.draw.rect(self.game.screen,(255,215,0),[150,295,20,30])
-            pygame.draw.rect(self.game.screen,(238,44,44),[170,295,20,30])
+            pygame.draw.rect(self.game.screen,(0,201,87),[120,self.HEIGHT-52,20,30])
+            pygame.draw.rect(self.game.screen,(255,215,0),[140,self.HEIGHT-52,20,30])
+            pygame.draw.rect(self.game.screen,(238,44,44),[160,self.HEIGHT-52,20,30])
             Settings.powerUsage = .4
         else: Settings.powerUsage = .1
 
