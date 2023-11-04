@@ -4,8 +4,8 @@ from settings import Settings
 
 class CameraScene(Scene):
 
-    self.HEIGHT = Settings.self.HEIGHT
-    self.WIDTH = Settings.self.WIDTH
+    HEIGHT = Settings.self.HEIGHT
+    WIDTH = Settings.self.WIDTH
 
     # white color 
     color = (255,255,255) 
@@ -71,42 +71,42 @@ class CameraScene(Scene):
                 pass
 
     def draw(self):
-        pygame.draw.rect(self.game.self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-200, self.HEIGHT-400, 180, 380),  0, 3)
+        pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-200, self.HEIGHT-400, 180, 380),  0, 3)
     
-        self.game.self.game.screen.blit(self.cameras, (self.WIDTH-159,self.HEIGHT-385))
-        self.game.self.game.screen.blit(self.doors, (self.WIDTH-145,self.HEIGHT-190))
+        self.game.screen.blit(self.cameras, (self.WIDTH-159,self.HEIGHT-385))
+        self.game.screen.blit(self.doors, (self.WIDTH-145,self.HEIGHT-190))
 
         # if mouse is hovered on a button it 
         # changes to lighter shade  
         #camera 1
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
-            pygame.draw.rect(self.game.self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-350,60,40]) 
+            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-350,60,40]) 
             
         else: 
-            pygame.draw.rect(self.game.self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-350,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-350,60,40]) 
 
         # superimposing the text onto our button 
-        self.game.self.game.screen.blit(self.cam1 , (self.WIDTH-157,self.HEIGHT-342))  
+        self.game.screen.blit(self.cam1 , (self.WIDTH-157,self.HEIGHT-342))  
 
         #camera 2
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
-            pygame.draw.rect(self.game.self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-350,60,40]) 
+            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-100,self.HEIGHT-350,60,40]) 
             
         else: 
-            pygame.draw.rect(self.game.self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-350,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-350,60,40]) 
 
         # superimposing the text onto our button 
-        self.game.self.game.screen.blit(self.cam2 , (self.WIDTH-77,self.HEIGHT-342))  
+        self.game.screen.blit(self.cam2 , (self.WIDTH-77,self.HEIGHT-342))  
         
         #camera 3
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
-            pygame.draw.rect(self.game.self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-300,60,40]) 
+            pygame.draw.rect(self.game.screen,(0,0,0),[self.WIDTH-180,self.HEIGHT-300,60,40]) 
             
         else: 
-            pygame.draw.rect(self.game.self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-300,60,40]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-300,60,40]) 
 
         # superimposing the text onto our button 
-        self.game.self.game.screen.blit(self.cam3 , (self.WIDTH-157,self.HEIGHT-292))  
+        self.game.screen.blit(self.cam3 , (self.WIDTH-157,self.HEIGHT-292))  
         
         #camera 4
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
@@ -288,16 +288,16 @@ class CameraScene(Scene):
         self.mapCam6 = minifont.render('Cam 6', True, self.color)
         
         #power bar words
-        power = smallfont.render('Power left:', True, self.color)
-        usage = smallfont.render('Usage:',True, self.color)
+        self.power = smallfont.render('Power left:', True, self.color)
+        self.usage = smallfont.render('Usage:',True, self.color)
         #varables for power
         door1power = 0
         door2power = 0
         self.cameraPower = 0
         self.cameraCurrent = 0
         powerLevel = 100
-        powerPercent = smallfont.render(str(powerLevel) + '%',True,self.color)
-        powerUsage = .01
+        self.powerPercent = smallfont.render(str(powerLevel) + '%',True,self.color)
+        self.powerUsage = .01
 
         if event.type == pygame.MOUSEBUTTONDOWN: 
         #cameras
