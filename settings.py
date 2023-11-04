@@ -27,6 +27,16 @@ class Settings:
     frank_ag = [1,1,1,1,1]
     j0mr_ag = [1,1,1,1,1]
 
+    # Character start locations
+    benny_s_loc = "H"
+    charlie_s_loc = "H"
+    fozie_s_loc = "H"
+    frank_s_loc = "G"
+    j0mr_s_loc = 0
+
+    # Camera settings
+    current_screen = 'A' #default to main room
+
     @classmethod
     def define_screen(self, display_height, display_width):
         if (display_width / display_height) > (16 / 9):
