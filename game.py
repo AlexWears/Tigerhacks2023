@@ -1,5 +1,6 @@
 import pygame
 from settings import Settings
+from scene import Location, Scene
 
 class Game:
     # initialize pygame and create window
@@ -16,8 +17,14 @@ class Game:
 
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
+        self.scene = Scene(self, "E")
 
-        self.background_image = 0
+        #characters = []
+        #characters.append(Character("Benny", 'H', 1, "benny.bmp"))
+        #characters.append(Character("Charlie", 'H', 1, "charlie.bmp"))
+        #characters.append(Character("Fozie", 'H', 1, "fozie.bmp"))
+        #characters.append(Character("Frank", 'G', 1, "frank.bmp"))
+        #characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
 
     def run(self):
         # Game loop
@@ -30,6 +37,7 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         running = False
+                self.scene.event_handler(event)
             
             self.update_and_display()
 
@@ -38,19 +46,14 @@ class Game:
     def update_and_display(self):
             # Update all sprites
             self.sprites.update()
+            self.scene.update()
 
-            # Draw/render
+            # Draw
             self.full_screen.fill(Settings.BLACK)
             self.full_screen.blit(self.screen, (Settings.screen_left, Settings.screen_top))
-            self.screen.fill(Settings.GREEN)
-            pygame.draw.rect(self.screen, Settings.RED, pygame.Rect(0, Settings.height-50, 100, 100), 0)
-
-            try:
-                self.screen.blit(self.background_image, (0, 0))
-            except:
-                pass
 
             self.sprites.draw(self.screen)
+            self.scene.draw()
 
             # Done after drawing everything to the screen
             pygame.display.flip()       

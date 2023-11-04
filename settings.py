@@ -1,5 +1,3 @@
-import pygame
-
 class Settings:
     
     # Some Basic Colors
@@ -22,6 +20,13 @@ class Settings:
     screen_top = 0
     screen_bottom = 0
 
+    # Character settings
+    benny_init_ag = 1
+    charlie_init_ag = 1
+    fozie_init_ag = 1
+    frank_init_ag = 1
+    j0mr_init_ag = 1
+
     @classmethod
     def define_screen(self, display_height, display_width):
         if (display_width / display_height) > (16 / 9):
@@ -43,6 +48,3 @@ class Settings:
         self.screen_right = width_gaps + self.width
         self.screen_top = height_gaps
         self.screen_bottom = height_gaps + self.height
-
-        print(self.screen_left)
-        print(self.screen_top)
