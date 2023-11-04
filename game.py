@@ -17,7 +17,7 @@ class Game:
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
 
-        self.background_image_path = "backgrounds/cam1.bmp"
+        self.background_image_path = "backgrounds/cam4.bmp"
 
         #characters = []
         #characters.append(Character("Benny", 'H', 1, "benny.bmp"))
