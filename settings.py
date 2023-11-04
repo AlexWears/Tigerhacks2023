@@ -20,12 +20,12 @@ class Settings:
     screen_top = 0
     screen_bottom = 0
 
-    # Character settings
-    benny_init_ag = [1,1,1,1,1]
-    charlie_init_ag = [1,1,1,1,1]
-    fozie_init_ag = [1,1,1,1,1]
-    frank_init_ag = [1,1,1,1,1]
-    j0mr_init_ag = [1,1,1,1,1]
+    # Character aggression settings [night 1, 2, 3, 4, 5]
+    benny_ag = [1,1,1,1,1]
+    charlie_ag = [1,1,1,1,1]
+    fozie_ag = [1,1,1,1,1]
+    frank_ag = [1,1,1,1,1]
+    j0mr_ag = [1,1,1,1,1]
 
     @classmethod
     def define_screen(self, display_height, display_width):
