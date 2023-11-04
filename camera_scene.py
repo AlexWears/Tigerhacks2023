@@ -9,6 +9,7 @@ class CameraScene(Scene):
         self.mouse = pygame.mouse.get_pos() 
         self.HEIGHT = Settings.height
         self.WIDTH = Settings.width
+        self.difference = Settings.height + Settings.screen_bottom + Settings.screen_top
 
         # white color 
         self.color = (255,255,255) 
@@ -86,7 +87,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.doors, (self.WIDTH-180,self.HEIGHT-190))
 
         #power button
-        if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-327 <= self.mouse[1] <= self.HEIGHT-327+30: 
+        if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-390+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-390+30+Settings.screen_top: 
             pygame.draw.rect(self.game.screen,(255,0,0),[self.WIDTH-64,self.HEIGHT-384,30,30]) 
             self.game.screen.blit(self.powerButton , (self.WIDTH-57,self.HEIGHT-380)) 
             
