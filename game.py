@@ -21,14 +21,20 @@ class Game:
         self.sprites = pygame.sprite.Group()
         self.scene = CameraScene(self, "A")
 
-        characters = []
-        characters.append(Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.bmp"))
-        characters.append(Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.bmp"))
-        characters.append(Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.bmp"))
-        characters.append(Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.bmp"))
+        self.characters = []
+        
+        self.benny = Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.bmp")
+        self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.bmp")
+        self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.bmp")
+        self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.bmp")
+
+        self.characters.append(self.benny)
+        self.characters.append(self.charlie)
+        self.characters.append(self.fozie)
+        self.characters.append(self.frank)
         # characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
 
-        self.character_sprites = pygame.sprite.Group(characters)
+        self.character_sprites = pygame.sprite.Group(self.characters)
 
 
     def run(self):
@@ -53,8 +59,11 @@ class Game:
             #self.sprites.update()
             self.scene.update()
             if isinstance(self.scene, CameraScene):
-                self.character_sprites.update()
-            self.character_sprites.update()
+                if pygame.time.get_ticks() >= Settings.next_movement: #if it is time for a movement opportunity
+                    self.character_sprites.update()
+                    Settings.next_movement = pygame.time.get_ticks() + Settings.time_between_moves
+
+            #self.character_sprites.update()
 
             # Draw
             self.full_screen.fill(Settings.BLACK)
