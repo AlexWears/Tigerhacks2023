@@ -41,6 +41,3 @@ class Settings:
         self.screen_right = width_gaps + self.width
         self.screen_top = height_gaps
         self.screen_bottom = height_gaps + self.height
-
-        print(self.screen_left)
-        print(self.screen_top)
