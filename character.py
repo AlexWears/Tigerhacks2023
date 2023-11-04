@@ -10,6 +10,7 @@ class Character(pygame.sprite.Sprite):
         self.name = name
         self.loc = s_loc
         self.aggression = aggression
+        self.on_screen = False
 
         self.rect = self.image.get_rect()
         self.rect.bottomleft = (0,0)
