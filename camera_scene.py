@@ -58,14 +58,14 @@ class CameraScene(Scene):
         self.driveway = self.hugefont.render('Driveway',True,self.color)
         
         #power bar words
-        self.power = self.smallfont.render('Power left:', True, self.color_dark)
-        self.usage = self.smallfont.render('Usage:',True, self.color_dark)
+        self.power = self.smallfont.render('Power left:', True, self.color)
+        self.usage = self.smallfont.render('Usage:',True, self.color)
         #varables for power
-        self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
+        self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color)
 
         #clock
-        self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color_dark)
-        self.dayDisplay = self.smallfont.render('Night ' + str(int(Settings.night + 1)),True,self.color_dark)
+        self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color)
+        self.dayDisplay = self.smallfont.render('Night ' + str(int(Settings.night + 1)),True,self.color)
 
     def create_scene_sprites(self):
         for c in self.game.characters:
@@ -281,6 +281,8 @@ class CameraScene(Scene):
         self.game.screen.blit(self.mapCam6, (58,211))
 
         #power bar
+        pygame.draw.rect(self.game.screen,self.color_dark,[18,268,170,30])
+        pygame.draw.rect(self.game.screen,self.color_dark,[18,298,75,25])
         self.game.screen.blit(self.power, (20,270)) 
         self.game.screen.blit(self.powerPercent, (135,270))
         self.game.screen.blit(self.usage, (20,295)) 
@@ -300,6 +302,7 @@ class CameraScene(Scene):
         else: Settings.powerUsage = .1
 
         #clock and day
+        pygame.draw.rect(self.game.screen,self.color_dark,[self.WIDTH-100,30,85,55])
         self.game.screen.blit(self.clockTime, (self.WIDTH-100,30))
         self.game.screen.blit(self.dayDisplay, (self.WIDTH-95,55))
 
@@ -408,13 +411,13 @@ class CameraScene(Scene):
         if Settings.new_time >= Settings.old_time + 1000:
             Settings.powerLevel -= Settings.powerUsage
             Settings.old_time = Settings.new_time
-            self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
+            self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color)
         Settings.new_clock_time = pygame.time.get_ticks()
         if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
             Settings.old_clock_time = Settings.new_clock_time
             if Settings.clock_time == 12:
                 Settings.clock_time = 1
             else: Settings.clock_time += 1
-            self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color_dark)
+            self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color)
 
 
