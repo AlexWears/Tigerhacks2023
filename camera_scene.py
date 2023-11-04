@@ -19,8 +19,6 @@ class CameraScene(Scene):
         # dark shade of the button 
         self.color_dark = (100,100,100) 
 
-        self.color_black = (0,0,0)
-
         self.smallfont = pygame.font.SysFont('Corbel',35) 
         self.largefont = pygame.font.SysFont('Corbel',38) 
         self.tinyfont = pygame.font.SysFont('Corbel',20) 
