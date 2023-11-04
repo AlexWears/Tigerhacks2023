@@ -10,7 +10,7 @@ class Frank(Character):
         self.image = pygame.image.load("sprites/frank.bmp")
         self.rect = self.image.get_rect()
         self.rect.bottomleft = (self.settings.width/2, self.settings.height/2)
-        self.s_loc = 2
+        self.loc = 2
     
     def blit_frank(self):
         self.screen.blit(self.image, self.rect)

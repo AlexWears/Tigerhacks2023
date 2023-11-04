@@ -12,8 +12,7 @@ class Character(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.bottomleft = (self.settings.width/2, self.settings.height/2)
         self.health = 0
-        self.c_loc = 0
-        self.s_loc = 0
+        self.loc = 0
 
 
     def blit_character(self):
