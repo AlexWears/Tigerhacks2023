@@ -76,6 +76,10 @@ class CameraScene(Scene):
     def draw(self):
         super().draw()
         self.mouse = pygame.mouse.get_pos() 
+        pygame.draw.rect(self.game.screen, Settings.BLACK, pygame.Rect(self.WIDTH-198, self.HEIGHT-398, 180, 380),  0, 3)
+        pygame.draw.rect(self.game.screen, Settings.BLACK, pygame.Rect(self.WIDTH-196, self.HEIGHT-396, 180, 380),  0, 3)
+        pygame.draw.rect(self.game.screen, Settings.BLACK, pygame.Rect(self.WIDTH-194, self.HEIGHT-394, 180, 380),  0, 3)
+        pygame.draw.rect(self.game.screen, Settings.BLACK, pygame.Rect(self.WIDTH-192, self.HEIGHT-392, 180, 380),  0, 3)
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-200, self.HEIGHT-400, 180, 380),  0, 3)
     
         self.game.screen.blit(self.cameras, (self.WIDTH-180,self.HEIGHT-385))
@@ -301,13 +305,11 @@ class CameraScene(Scene):
 
         pass
     def event_handler(self, event):
-        # defining a font 
-        self.smallfont = pygame.font.SysFont('Corbel',35) 
-        self.largefont = pygame.font.SysFont('Corbel',38) 
-        self.tinyfont = pygame.font.SysFont('Corbel',20) 
-        self.minifont = pygame.font.SysFont('Corbel',13)
 
         if event.type == pygame.MOUSEBUTTONDOWN: 
+            #power
+            if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-327 <= self.mouse[1] <= self.HEIGHT-327+30: 
+                pygame.quit()
         #cameras
             #1
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
