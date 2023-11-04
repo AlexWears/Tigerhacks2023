@@ -1,3 +1,5 @@
+import pygame
+
 class Settings:
     
     # Some Basic Colors
@@ -40,7 +42,11 @@ class Settings:
     cameraPower = 0
     cameraCurrent = 0
     powerLevel = 100
-    powerUsage = .01
+    powerUsage = .1
+
+    #Timer
+    old_time = 0
+    new_time = 0
 
     # Camera settings
     current_screen = 'A' #default to main room

@@ -50,13 +50,11 @@ class CameraScene(Scene):
         self.mapCam6 = self.minifont.render('Cam 6', True, self.color)
         
         #power bar words
-        self.power = self.smallfont.render('Power left:', True, self.color)
-        self.usage = self.smallfont.render('Usage:',True, self.color)
+        self.power = self.smallfont.render('Power left:', True, self.color_dark)
+        self.usage = self.smallfont.render('Usage:',True, self.color_dark)
         #varables for power
-        self.powerLevel = 100
-        self.powerPercent = self.smallfont.render(str(self.powerLevel) + '%',True,self.color)
+        self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
 
-        
     def create_scene_sprites(self):
         for c in self.game.characters:
             if c.loc == self.location:
@@ -228,7 +226,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
             else:
                 pygame.draw.rect(self.game.screen,(91,91,91),[55,205,30,20])
-        self.game.screen.blit(self.mapCam6, (58,211)) 
+        self.game.screen.blit(self.mapCam6, (58,211))
 
         #power bar
         self.game.screen.blit(self.power, (20,270)) 
@@ -237,17 +235,17 @@ class CameraScene(Scene):
         pygame.draw.rect(self.game.screen,(0,201,87),[110,295,20,30])
         if Settings.cameraPower + Settings.door1power + Settings.door2power == 1:
             pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
-            Settings.powerUsage = .02
+            Settings.powerUsage = .2
         elif Settings.cameraPower + Settings.door1power + Settings.door2power == 2:
             pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
             pygame.draw.rect(self.game.screen,(255,215,0),[150,295,20,30])
-            Settings.powerUsage = .03
+            Settings.powerUsage = .3
         elif Settings.cameraPower + Settings.door1power + Settings.door2power == 3:
             pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
             pygame.draw.rect(self.game.screen,(255,215,0),[150,295,20,30])
             pygame.draw.rect(self.game.screen,(238,44,44),[170,295,20,30])
-            Settings.powerUsage = .04
-        else: Settings.powerUsage = .01
+            Settings.powerUsage = .4
+        else: Settings.powerUsage = .1
 
         pass
     def event_handler(self, event):
@@ -256,37 +254,6 @@ class CameraScene(Scene):
         self.largefont = pygame.font.SysFont('Corbel',38) 
         self.tinyfont = pygame.font.SysFont('Corbel',20) 
         self.minifont = pygame.font.SysFont('Corbel',13)
-
-        # rendering a text written in 
-        # this font 
-        #remote buttons
-        self.cam1 = self.smallfont.render('1' , True , self.color) 
-        self.cam2 = self.smallfont.render('2' , True , self.color) 
-        self.cam3 = self.smallfont.render('3' , True , self.color) 
-        self.cam4 = self.smallfont.render('4' , True , self.color) 
-        self.cam5 = self.smallfont.render('5' , True , self.color) 
-        self.cam6 = self.smallfont.render('6' , True , self.color) 
-        self.door1 = self.largefont.render('1' , True , self.color) 
-        self.door2 = self.largefont.render('2' , True , self.color) 
-
-        #remote words
-        self.cameras = self.smallfont.render('Cameras', True, self.color)
-        self.doors = self.smallfont.render('Doors', True, self.color)
-
-        #map labels
-        self.you = self.tinyfont.render('You', True, self.color)
-        self.mapcam1 = self.minifont.render('Cam 1', True, self.color)
-        self.mapcam2 = self.minifont.render('Cam 2', True, self.color)
-        self.mapCam3 = self.minifont.render('Cam 3', True, self.color)
-        self.mapCam4 = self.minifont.render('Cam 4', True, self.color)
-        self.mapCam5 = self.minifont.render('Cam 5', True, self.color)
-        self.mapCam6 = self.minifont.render('Cam 6', True, self.color)
-        
-        #power bar words
-        self.power = self.smallfont.render('Power left:', True, self.color)
-        self.usage = self.smallfont.render('Usage:',True, self.color)
-        #varables for power
-        self.powerPercent = self.smallfont.render(str(self.powerLevel) + '%',True,self.color)
 
         if event.type == pygame.MOUSEBUTTONDOWN: 
         #cameras
@@ -379,9 +346,16 @@ class CameraScene(Scene):
                 elif Settings.door2power == 1:
                     Settings.door2power = 0
 
-            
-            Location.location_image["A"] = "backgrounds/lvr" + str(Settings.door1power) + str(Settings.door2power) + ".bmp"
 
         
-        
+    def update(self):
+        super().update()
+        Location.location_image["A"] = "backgrounds/lvr" + str(Settings.door1power) + str(Settings.door2power) + ".bmp"
+         #timer
+        Settings.new_time = pygame.time.get_ticks()
+        if Settings.new_time >= Settings.old_time + 1000:
+            Settings.powerLevel -= Settings.powerUsage
+            Settings.old_time = Settings.new_time
+            self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
+
 

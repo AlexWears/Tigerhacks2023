@@ -20,6 +20,7 @@ start_time = 0
 TIMEEVENT, t, seconds = pygame.USEREVENT+1, 1000, []
 pygame.time.set_timer(TIMEEVENT, t)
 
+
 # white color 
 color = (255,255,255) 
   
