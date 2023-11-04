@@ -2,6 +2,7 @@ import pygame
 from settings import Settings
 from scene import Location, Scene
 from character import Character
+from camera_scene import CameraScene
 
 class Game:
     # initialize pygame and create window
@@ -51,13 +52,16 @@ class Game:
             # Update all sprites
             #self.sprites.update()
             self.scene.update()
+            if self.scene.isinstance(CameraScene):
+                self.character_sprites.update()
+            self.character_sprites.update()
 
             # Draw
             self.full_screen.fill(Settings.BLACK)
             self.full_screen.blit(self.screen, (Settings.screen_left, Settings.screen_top))
 
-            self.sprites.draw(self.screen)
             self.scene.draw()
+            self.sprites.draw(self.screen)
 
             # Done after drawing everything to the screen
             pygame.display.flip()       

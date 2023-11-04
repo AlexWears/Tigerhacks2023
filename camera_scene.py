@@ -8,10 +8,13 @@ class CameraScene(Scene):
 
         
     def create_scene_sprites(self):
-        for c in game.characters:
+        for c in self.game.characters:
             if c.loc == self.location:
                 #draw characters in the room
                 pass
+
+    def draw(self):
+        pass
 
         
         
