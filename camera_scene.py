@@ -53,13 +53,8 @@ class CameraScene(Scene):
         self.power = self.smallfont.render('Power left:', True, self.color)
         self.usage = self.smallfont.render('Usage:',True, self.color)
         #varables for power
-        self.door1power = 0
-        self.door2power = 0
-        self.cameraPower = 0
-        self.cameraCurrent = 0
         self.powerLevel = 100
         self.powerPercent = self.smallfont.render(str(self.powerLevel) + '%',True,self.color)
-        self.powerUsage = .01
 
         
     def create_scene_sprites(self):
