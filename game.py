@@ -1,5 +1,6 @@
 import pygame
 from settings import Settings
+from scene import Location, Scene
 
 class Game:
     # initialize pygame and create window
@@ -16,8 +17,7 @@ class Game:
 
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
-
-        self.background_image_path = "backgrounds/cam4.bmp"
+        self.scene = Scene(self, "E")
 
         #characters = []
         #characters.append(Character("Benny", 'H', 1, "benny.bmp"))
@@ -49,13 +49,10 @@ class Game:
             # Draw/render
             self.full_screen.fill(Settings.BLACK)
             self.full_screen.blit(self.screen, (Settings.screen_left, Settings.screen_top))
-            self.screen.fill(Settings.GREEN)
 
-            self.background_image = pygame.image.load(self.background_image_path).convert()
-            self.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
-            self.screen.blit(self.background_image, (0, 0))
 
             self.sprites.draw(self.screen)
+            self.scene.draw()
 
             # Done after drawing everything to the screen
             pygame.display.flip()       
