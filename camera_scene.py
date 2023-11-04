@@ -4,64 +4,62 @@ from settings import Settings
 
 class CameraScene(Scene):
 
-    HEIGHT = Settings.self.HEIGHT
-    WIDTH = Settings.self.WIDTH
-
-    # white color 
-    color = (255,255,255) 
-    
-    # light shade of the button 
-    color_light = (170,170,170) 
-    
-    # dark shade of the button 
-    color_dark = (100,100,100) 
-
-    smallfont = pygame.font.SysFont('Corbel',35) 
-    largefont = pygame.font.SysFont('Corbel',38) 
-    tinyfont = pygame.font.SysFont('Corbel',20) 
-    minifont = pygame.font.SysFont('Corbel',13)
-
-    # rendering a text written in 
-    # this font 
-    #remote buttons
-    cam1 = smallfont.render('1' , True , color) 
-    cam2 = smallfont.render('2' , True , color) 
-    cam3 = smallfont.render('3' , True , color) 
-    cam4 = smallfont.render('4' , True , color) 
-    cam5 = smallfont.render('5' , True , color) 
-    cam6 = smallfont.render('6' , True , color) 
-    door1 = largefont.render('1' , True , color) 
-    door2 = largefont.render('2' , True , color) 
-
-    #remote words
-    cameras = smallfont.render('Cameras', True, color)
-    doors = smallfont.render('Doors', True, color)
-
-    #map labels
-    you = tinyfont.render('You', True, color)
-    mapcam1 = minifont.render('Cam 1', True, color)
-    mapcam2 = minifont.render('Cam 2', True, color)
-    mapCam3 = minifont.render('Cam 3', True, color)
-    mapCam4 = minifont.render('Cam 4', True, color)
-    mapCam5 = minifont.render('Cam 5', True, color)
-    mapCam6 = minifont.render('Cam 6', True, color)
-    
-    #power bar words
-    power = smallfont.render('Power left:', True, color)
-    usage = smallfont.render('Usage:',True, color)
-    #varables for power
-    door1power = 0
-    door2power = 0
-    cameraPower = 0
-    cameraCurrent = 0
-    powerLevel = 100
-    powerPercent = smallfont.render(str(powerLevel) + '%',True,color)
-    powerUsage = .01
-
-    mouse = pygame.mouse.get_pos() 
-
     def __init__(self, game, location):
-        super().__init__(self, game, location)
+        super().__init__(game, location)
+        self.mouse = pygame.mouse.get_pos() 
+        self.HEIGHT = Settings.height
+        self.WIDTH = Settings.width
+
+        # white color 
+        self.color = (255,255,255) 
+        
+        # light shade of the button 
+        self.color_light = (170,170,170) 
+        
+        # dark shade of the button 
+        self.color_dark = (100,100,100) 
+
+        self.smallfont = pygame.font.SysFont('Corbel',35) 
+        self.largefont = pygame.font.SysFont('Corbel',38) 
+        self.tinyfont = pygame.font.SysFont('Corbel',20) 
+        self.minifont = pygame.font.SysFont('Corbel',13)
+
+        # rendering a text written in 
+        # this font 
+        #remote buttons
+        self.cam1 = self.smallfont.render('1' , True , self.color) 
+        self.cam2 = self.smallfont.render('2' , True , self.color) 
+        self.cam3 = self.smallfont.render('3' , True , self.color) 
+        self.cam4 = self.smallfont.render('4' , True , self.color) 
+        self.cam5 = self.smallfont.render('5' , True , self.color) 
+        self.cam6 = self.smallfont.render('6' , True , self.color) 
+        self.door1 = self.largefont.render('1' , True , self.color) 
+        self.door2 = self.largefont.render('2' , True , self.color) 
+
+        #remote words
+        self.cameras = self.smallfont.render('Cameras', True, self.color)
+        self.doors = self.smallfont.render('Doors', True, self.color)
+
+        #map labels
+        self.you = self.tinyfont.render('You', True, self.color)
+        self.mapcam1 = self.minifont.render('Cam 1', True, self.color)
+        self.mapcam2 = self.minifont.render('Cam 2', True, self.color)
+        self.mapCam3 = self.minifont.render('Cam 3', True, self.color)
+        self.mapCam4 = self.minifont.render('Cam 4', True, self.color)
+        self.mapCam5 = self.minifont.render('Cam 5', True, self.color)
+        self.mapCam6 = self.minifont.render('Cam 6', True, self.color)
+        
+        #power bar words
+        self.power = self.smallfont.render('Power left:', True, self.color)
+        self.usage = self.smallfont.render('Usage:',True, self.color)
+        #varables for power
+        self.door1power = 0
+        self.door2power = 0
+        self.cameraPower = 0
+        self.cameraCurrent = 0
+        self.powerLevel = 100
+        self.powerPercent = self.smallfont.render(str(self.powerLevel) + '%',True,self.color)
+        self.powerUsage = .01
 
         
     def create_scene_sprites(self):
@@ -76,7 +74,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.cameras, (self.WIDTH-159,self.HEIGHT-385))
         self.game.screen.blit(self.doors, (self.WIDTH-145,self.HEIGHT-190))
 
-        # if mouse is hovered on a button it 
+        # if self.mouse is hovered on a button it 
         # changes to lighter shade  
         #camera 1
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
@@ -302,7 +300,7 @@ class CameraScene(Scene):
         if event.type == pygame.MOUSEBUTTONDOWN: 
         #cameras
             #1
-            if self.self.WIDTH-180 <= self.mouse[0] <= self.self.WIDTH-180+60 and self.self.HEIGHT-350 <= self.mouse[1] <= self.self.HEIGHT-350+40: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 1
@@ -312,7 +310,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 1:
                     self.cameraCurrent = 1
             #2
-            if self.self.WIDTH-100 <= self.mouse[0] <= self.self.WIDTH-100+60 and self.self.HEIGHT-350 <= self.mouse[1] <= self.self.HEIGHT-350+40: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350 <= self.mouse[1] <= self.HEIGHT-350+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 2
@@ -322,7 +320,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 2:
                     self.cameraCurrent = 2
             #3
-            if self.self.WIDTH-180 <= self.mouse[0] <= self.self.WIDTH-180+60 and self.self.HEIGHT-300 <= self.mouse[1] <= self.self.HEIGHT-300+40: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 3
@@ -332,7 +330,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 3:
                     self.cameraCurrent = 3 
             #4
-            if self.self.WIDTH-100 <= self.mouse[0] <= self.self.WIDTH-100+60 and self.self.HEIGHT-300 <= self.mouse[1] <= self.self.HEIGHT-300+40: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300 <= self.mouse[1] <= self.HEIGHT-300+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 4
@@ -342,7 +340,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 4:
                     self.cameraCurrent = 4
             #5
-            if self.self.WIDTH-180 <= self.mouse[0] <= self.self.WIDTH-180+60 and self.self.HEIGHT-250 <= self.mouse[1] <= self.self.HEIGHT-250+40: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 5
@@ -352,7 +350,7 @@ class CameraScene(Scene):
                 elif self.cameraPower == 1 and not self.cameraCurrent == 5:
                     self.cameraCurrent = 5
             #6
-            if self.self.WIDTH-100 <= self.mouse[0] <= self.self.WIDTH-100+60 and self.self.HEIGHT-250 <= self.mouse[1] <= self.self.HEIGHT-250+40: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-250 <= self.mouse[1] <= self.HEIGHT-250+40: 
                 if self.cameraPower == 0: 
                     self.cameraPower = 1
                     self.cameraCurrent = 6
@@ -364,13 +362,13 @@ class CameraScene(Scene):
 
             #doors
             #1
-            if self.self.WIDTH-180 <= self.mouse[0] <= self.self.WIDTH-180+60 and self.self.HEIGHT-150 <= self.mouse[1] <= self.self.HEIGHT-150+105: 
+            if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
                 if door1power == 0: 
                     door1power = 1
                 elif door1power == 1:
                     door1power = 0
             #2
-            if self.self.WIDTH-100 <= self.mouse[0] <= self.self.WIDTH-100+60 and self.self.HEIGHT-150 <= self.mouse[1] <= self.self.HEIGHT-150+105: 
+            if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
                 if door2power == 0: 
                     door2power = 1
                 elif door2power == 1:
