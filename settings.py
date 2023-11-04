@@ -10,6 +10,6 @@ class settings:
     screen_left = 0
     screen_right = 0
     screen_top = 0
-    screen_bottom = 0
+    screen_bottom = 5
 
     
