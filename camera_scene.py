@@ -19,11 +19,11 @@ class CameraScene(Scene):
         # dark shade of the button 
         self.color_dark = (100,100,100) 
 
-        self.smallfont = pygame.font.Font("font/corbel.ttf",35) 
-        self.largefont = pygame.font.Font("font/corbel.ttf",38) 
-        self.tinyfont = pygame.font.Font("font/corbel.ttf",20) 
-        self.minifont = pygame.font.Font("font/corbel.ttf",13)
-        self.hugefont = pygame.font.Font("font/corbel.ttf",50)
+        self.smallfont = pygame.font.Font("font/corbel.ttf",25) 
+        self.largefont = pygame.font.Font("font/corbel.ttf",28) 
+        self.tinyfont = pygame.font.Font("font/corbel.ttf",10) 
+        self.minifont = pygame.font.Font("font/corbel.ttf",9)
+        self.hugefont = pygame.font.Font("font/corbel.ttf",40)
 
         # rendering a text written in 
         # this font 
@@ -36,7 +36,7 @@ class CameraScene(Scene):
         self.cam6 = self.smallfont.render('6' , True , self.color) 
         self.door1 = self.largefont.render('1' , True , self.color) 
         self.door2 = self.largefont.render('2' , True , self.color) 
-        self.powerButton = self.tinyfont.render('X' , True , self.color) 
+        self.powerButton = self.smallfont.render('X' , True , self.color) 
 
         #remote words
         self.cameras = self.smallfont.render('Cameras', True, self.color)
@@ -88,14 +88,14 @@ class CameraScene(Scene):
         #power button
         if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-327 <= self.mouse[1] <= self.HEIGHT-327+30: 
             pygame.draw.rect(self.game.screen,(255,0,0),[self.WIDTH-64,self.HEIGHT-384,30,30]) 
-            self.game.screen.blit(self.powerButton , (self.WIDTH-53,self.HEIGHT-376)) 
+            self.game.screen.blit(self.powerButton , (self.WIDTH-57,self.HEIGHT-380)) 
             
         else: 
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-68,self.HEIGHT-388,30,30]) 
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-66,self.HEIGHT-386,30,30]) 
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-64,self.HEIGHT-384,30,30]) 
             pygame.draw.rect(self.game.screen,(255,0,0),[self.WIDTH-70,self.HEIGHT-390,30,30]) 
-            self.game.screen.blit(self.powerButton , (self.WIDTH-59,self.HEIGHT-382)) 
+            self.game.screen.blit(self.powerButton , (self.WIDTH-63,self.HEIGHT-386)) 
 
         # if self.mouse is hovered on a button it 
         # changes to lighter shade  
