@@ -69,6 +69,7 @@ class CameraScene(Scene):
                 pass
 
     def draw(self):
+        self.mouse = pygame.mouse.get_pos() 
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-200, self.HEIGHT-400, 180, 380),  0, 3)
     
         self.game.screen.blit(self.cameras, (self.WIDTH-159,self.HEIGHT-385))
@@ -240,61 +241,61 @@ class CameraScene(Scene):
         pygame.draw.rect(self.game.screen,(0,201,87),[110,295,20,30])
         if self.cameraPower + self.door1power + self.door2power == 1:
             pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
-            powerUsage = .02
+            self.powerUsage = .02
         elif self.cameraPower + self.door1power + self.door2power == 2:
             pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
             pygame.draw.rect(self.game.screen,(255,215,0),[150,295,20,30])
-            powerUsage = .03
+            self.powerUsage = .03
         elif self.cameraPower + self.door1power + self.door2power == 3:
             pygame.draw.rect(self.game.screen,(0,201,87),[130,295,20,30])
             pygame.draw.rect(self.game.screen,(255,215,0),[150,295,20,30])
             pygame.draw.rect(self.game.screen,(238,44,44),[170,295,20,30])
-            powerUsage = .04
-        else: powerUsage = .01
+            self.powerUsage = .04
+        else: self.powerUsage = .01
 
         pass
     def event_handler(self, event):
         # defining a font 
-        smallfont = pygame.font.SysFont('Corbel',35) 
-        largefont = pygame.font.SysFont('Corbel',38) 
-        tinyfont = pygame.font.SysFont('Corbel',20) 
-        minifont = pygame.font.SysFont('Corbel',13)
+        self.smallfont = pygame.font.SysFont('Corbel',35) 
+        self.largefont = pygame.font.SysFont('Corbel',38) 
+        self.tinyfont = pygame.font.SysFont('Corbel',20) 
+        self.minifont = pygame.font.SysFont('Corbel',13)
 
         # rendering a text written in 
         # this font 
         #remote buttons
-        self.cam1 = smallfont.render('1' , True , self.color) 
-        self.cam2 = smallfont.render('2' , True , self.color) 
-        cam3 = smallfont.render('3' , True , self.color) 
-        cam4 = smallfont.render('4' , True , self.color) 
-        cam5 = smallfont.render('5' , True , self.color) 
-        cam6 = smallfont.render('6' , True , self.color) 
-        door1 = largefont.render('1' , True , self.color) 
-        door2 = largefont.render('2' , True , self.color) 
+        self.cam1 = self.smallfont.render('1' , True , self.color) 
+        self.cam2 = self.smallfont.render('2' , True , self.color) 
+        self.cam3 = self.smallfont.render('3' , True , self.color) 
+        self.cam4 = self.smallfont.render('4' , True , self.color) 
+        self.cam5 = self.smallfont.render('5' , True , self.color) 
+        self.cam6 = self.smallfont.render('6' , True , self.color) 
+        self.door1 = self.largefont.render('1' , True , self.color) 
+        self.door2 = self.largefont.render('2' , True , self.color) 
 
         #remote words
-        cameras = smallfont.render('Cameras', True, self.color)
-        doors = smallfont.render('Doors', True, self.color)
+        self.cameras = self.smallfont.render('Cameras', True, self.color)
+        self.doors = self.smallfont.render('Doors', True, self.color)
 
         #map labels
-        you = tinyfont.render('You', True, self.color)
-        self.mapcam1 = minifont.render('Cam 1', True, self.color)
-        self.mapcam2 = minifont.render('Cam 2', True, self.color)
-        self.mapCam3 = minifont.render('Cam 3', True, self.color)
-        self.mapCam4 = minifont.render('Cam 4', True, self.color)
-        self.mapCam5 = minifont.render('Cam 5', True, self.color)
-        self.mapCam6 = minifont.render('Cam 6', True, self.color)
+        self.you = self.tinyfont.render('You', True, self.color)
+        self.mapcam1 = self.minifont.render('Cam 1', True, self.color)
+        self.mapcam2 = self.minifont.render('Cam 2', True, self.color)
+        self.mapCam3 = self.minifont.render('Cam 3', True, self.color)
+        self.mapCam4 = self.minifont.render('Cam 4', True, self.color)
+        self.mapCam5 = self.minifont.render('Cam 5', True, self.color)
+        self.mapCam6 = self.minifont.render('Cam 6', True, self.color)
         
         #power bar words
-        self.power = smallfont.render('Power left:', True, self.color)
-        self.usage = smallfont.render('Usage:',True, self.color)
+        self.power = self.smallfont.render('Power left:', True, self.color)
+        self.usage = self.smallfont.render('Usage:',True, self.color)
         #varables for power
-        door1power = 0
-        door2power = 0
+        self.door1power = 0
+        self.door2power = 0
         self.cameraPower = 0
         self.cameraCurrent = 0
-        powerLevel = 100
-        self.powerPercent = smallfont.render(str(powerLevel) + '%',True,self.color)
+        self.powerLevel = 100
+        self.powerPercent = self.smallfont.render(str(self.powerLevel) + '%',True,self.color)
         self.powerUsage = .01
 
         if event.type == pygame.MOUSEBUTTONDOWN: 
@@ -363,16 +364,16 @@ class CameraScene(Scene):
             #doors
             #1
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
-                if door1power == 0: 
-                    door1power = 1
-                elif door1power == 1:
-                    door1power = 0
+                if self.door1power == 0: 
+                    self.door1power = 1
+                elif self.door1power == 1:
+                    self.door1power = 0
             #2
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-150 <= self.mouse[1] <= self.HEIGHT-150+105: 
-                if door2power == 0: 
-                    door2power = 1
-                elif door2power == 1:
-                    door2power = 0
+                if self.door2power == 0: 
+                    self.door2power = 1
+                elif self.door2power == 1:
+                    self.door2power = 0
 
         
         
