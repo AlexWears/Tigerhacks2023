@@ -1,6 +1,7 @@
 import pygame
 from settings import Settings
 from scene import Location, Scene
+from character import Character
 
 class Game:
     # initialize pygame and create window
@@ -19,12 +20,15 @@ class Game:
         self.sprites = pygame.sprite.Group()
         self.scene = Scene(self, "E")
 
-        #characters = []
-        #characters.append(Character("Benny", 'H', 1, "benny.bmp"))
-        #characters.append(Character("Charlie", 'H', 1, "charlie.bmp"))
-        #characters.append(Character("Fozie", 'H', 1, "fozie.bmp"))
-        #characters.append(Character("Frank", 'G', 1, "frank.bmp"))
-        #characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
+        characters = []
+        characters.append(Character("Benny", 'H', 1, "sprites/benny.bmp"))
+        characters.append(Character("Charlie", 'H', 1, "sprites/charlie.bmp"))
+        characters.append(Character("Fozie", 'H', 1, "sprites/fozie.bmp"))
+        characters.append(Character("Frank", 'G', 1, "sprites/frank.bmp"))
+        # characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
+
+        self.character_sprites = pygame.sprite.Group(characters)
+
 
     def run(self):
         # Game loop
@@ -45,7 +49,7 @@ class Game:
 
     def update_and_display(self):
             # Update all sprites
-            self.sprites.update()
+            #self.sprites.update()
             self.scene.update()
 
             # Draw
