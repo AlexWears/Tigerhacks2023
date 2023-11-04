@@ -38,6 +38,7 @@ class CameraScene(Scene):
         self.cam6 = self.smallfont.render('6' , True , self.color) 
         self.door1 = self.largefont.render('1' , True , self.color) 
         self.door2 = self.largefont.render('2' , True , self.color) 
+        self.powerButton = self.smallfont.render('X' , True , self.color) 
 
         #remote words
         self.cameras = self.smallfont.render('Cameras', True, self.color)
@@ -79,8 +80,20 @@ class CameraScene(Scene):
         self.mouse = pygame.mouse.get_pos() 
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-200, self.HEIGHT-400, 180, 380),  0, 3)
     
-        self.game.screen.blit(self.cameras, (self.WIDTH-159,self.HEIGHT-385))
+        self.game.screen.blit(self.cameras, (self.WIDTH-180,self.HEIGHT-385))
         self.game.screen.blit(self.doors, (self.WIDTH-145,self.HEIGHT-190))
+
+        #power button
+        if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-293 <= self.mouse[1] <= self.HEIGHT-293+40: 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-84,self.HEIGHT-384,20,20]) 
+            self.game.screen.blit(self.powerButton , (self.WIDTH-56,self.HEIGHT-376)) 
+            
+        else: 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-88,self.HEIGHT-388,20,20]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-86,self.HEIGHT-386,20,20]) 
+            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-84,self.HEIGHT-384,20,20]) 
+            pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-90,self.HEIGHT-390,20,20]) 
+            self.game.screen.blit(self.powerButton , (self.WIDTH-67,self.HEIGHT-342)) 
 
         # if self.mouse is hovered on a button it 
         # changes to lighter shade  
