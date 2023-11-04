@@ -282,7 +282,7 @@ class CameraScene(Scene):
 
         #power bar
         self.game.screen.blit(self.power, (20,270)) 
-        self.game.screen.blit(self.powerPercent, (150,270))
+        self.game.screen.blit(self.powerPercent, (135,270))
         self.game.screen.blit(self.usage, (20,295)) 
         pygame.draw.rect(self.game.screen,(0,201,87),[110,295,20,30])
         if Settings.cameraPower + Settings.door1power + Settings.door2power == 1:
@@ -300,8 +300,8 @@ class CameraScene(Scene):
         else: Settings.powerUsage = .1
 
         #clock and day
-        self.game.screen.blit(self.clockTime, (self.WIDTH-100,50))
-        self.game.screen.blit(self.dayDisplay, (self.WIDTH-95,75))
+        self.game.screen.blit(self.clockTime, (self.WIDTH-100,30))
+        self.game.screen.blit(self.dayDisplay, (self.WIDTH-95,55))
 
         pass
     def event_handler(self, event):
