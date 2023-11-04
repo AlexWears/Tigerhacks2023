@@ -87,9 +87,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.powerButton , (self.WIDTH-56,self.HEIGHT-376)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-88,self.HEIGHT-388,20,20]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-86,self.HEIGHT-386,20,20]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-84,self.HEIGHT-384,20,20]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-88,self.HEIGHT-388,20,20]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-86,self.HEIGHT-386,20,20]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-84,self.HEIGHT-384,20,20]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-90,self.HEIGHT-390,20,20]) 
             self.game.screen.blit(self.powerButton , (self.WIDTH-67,self.HEIGHT-342)) 
 
@@ -102,9 +102,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.cam1 , (self.WIDTH-151,self.HEIGHT-336)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-348,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-346,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-344,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-178,self.HEIGHT-348,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-176,self.HEIGHT-346,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-174,self.HEIGHT-344,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-350,60,40]) 
             self.game.screen.blit(self.cam1 , (self.WIDTH-157,self.HEIGHT-342)) 
 
@@ -114,9 +114,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.cam2 , (self.WIDTH-71,self.HEIGHT-336))
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-348,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-346,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-344,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-98,self.HEIGHT-348,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-96,self.HEIGHT-346,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-94,self.HEIGHT-344,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-350,60,40]) 
             self.game.screen.blit(self.cam2 , (self.WIDTH-77,self.HEIGHT-342)) 
         
@@ -126,9 +126,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.cam3 , (self.WIDTH-151,self.HEIGHT-286)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-298,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-296,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-294,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-178,self.HEIGHT-298,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-176,self.HEIGHT-296,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-174,self.HEIGHT-294,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-300,60,40]) 
             self.game.screen.blit(self.cam3 , (self.WIDTH-157,self.HEIGHT-292))  
         
@@ -138,9 +138,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.cam4 , (self.WIDTH-71,self.HEIGHT-286)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-298,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-296,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-294,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-98,self.HEIGHT-298,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-96,self.HEIGHT-296,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-94,self.HEIGHT-294,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-300,60,40]) 
             self.game.screen.blit(self.cam4 , (self.WIDTH-77,self.HEIGHT-292)) 
         
@@ -150,9 +150,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.cam5 , (self.WIDTH-151,self.HEIGHT-236)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-248,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-246,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-244,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-178,self.HEIGHT-248,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-176,self.HEIGHT-246,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-174,self.HEIGHT-244,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-250,60,40]) 
             self.game.screen.blit(self.cam5 , (self.WIDTH-157,self.HEIGHT-242)) 
 
@@ -163,9 +163,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.cam6 , (self.WIDTH-71,self.HEIGHT-236)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-248,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-246,60,40]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-244,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-98,self.HEIGHT-248,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-96,self.HEIGHT-246,60,40]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-94,self.HEIGHT-244,60,40]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-250,60,40]) 
             self.game.screen.blit(self.cam6 , (self.WIDTH-77,self.HEIGHT-242)) 
 
@@ -175,9 +175,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.door1 , (self.WIDTH-151,self.HEIGHT-104)) 
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-178,self.HEIGHT-148,60,105]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-176,self.HEIGHT-146,60,105]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-174,self.HEIGHT-144,60,105]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-178,self.HEIGHT-148,60,105]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-176,self.HEIGHT-146,60,105]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-174,self.HEIGHT-144,60,105]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-150,60,105]) 
             self.game.screen.blit(self.door1 , (self.WIDTH-157,self.HEIGHT-112)) 
 
@@ -187,9 +187,9 @@ class CameraScene(Scene):
             self.game.screen.blit(self.door2 , (self.WIDTH-71,self.HEIGHT-104))  
             
         else: 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-98,self.HEIGHT-148,60,105]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-96,self.HEIGHT-146,60,105]) 
-            pygame.draw.rect(self.game.screen,self.color_black,[self.WIDTH-94,self.HEIGHT-144,60,105])
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-98,self.HEIGHT-148,60,105]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-96,self.HEIGHT-146,60,105]) 
+            pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-94,self.HEIGHT-144,60,105])
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-150,60,105]) 
             self.game.screen.blit(self.door2 , (self.WIDTH-77,self.HEIGHT-112))  
 
