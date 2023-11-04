@@ -28,9 +28,8 @@ class Character(pygame.sprite.Sprite):
             #take even chance to go to any adjacent room (figuring this out)
             self.loc = random.choice(Location.adjacent_locations[self.loc])
             print(self.name + " has taken the opportunity to move from " + self.prev_loc + " " + self.loc + ".\n")
-
+        else:
             pass
-        pass
 
     def draw(self):
         pass
