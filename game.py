@@ -17,7 +17,7 @@ class Game:
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
 
-        self.background_image = 0
+        self.background_image_path = "backgrounds/cam1.bmp"
 
         #characters = []
         #characters.append(Character("Benny", 'H', 1, "benny.bmp"))
@@ -50,12 +50,10 @@ class Game:
             self.full_screen.fill(Settings.BLACK)
             self.full_screen.blit(self.screen, (Settings.screen_left, Settings.screen_top))
             self.screen.fill(Settings.GREEN)
-            pygame.draw.rect(self.screen, Settings.RED, pygame.Rect(0, Settings.height-50, 100, 100), 0)
 
-            try:
-                self.screen.blit(self.background_image, (0, 0))
-            except:
-                pass
+            self.background_image = pygame.image.load(self.background_image_path).convert()
+            self.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
+            self.screen.blit(self.background_image, (0, 0))
 
             self.sprites.draw(self.screen)
 
