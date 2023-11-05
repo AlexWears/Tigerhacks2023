@@ -75,6 +75,7 @@ class Game:
             if Settings.new_time >= Settings.old_time + 1000:
                 Settings.powerLevel -= Settings.powerUsage
                 Settings.old_time = Settings.new_time
+                #blackout
                 if Settings.powerLevel <= 0:
                     pass
             Settings.new_clock_time = pygame.time.get_ticks()
@@ -86,7 +87,9 @@ class Game:
                 if Settings.clock_time == 6:
                     Settings.new_clock_time = 0
                     Settings.old_clock_time = 0
+                    #night change
                     Settings.night += 1
+                    #win
                     if Settings.night == 6:
                         pass
 
