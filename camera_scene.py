@@ -313,7 +313,7 @@ class CameraScene(Scene):
         self.game.screen.blit(self.dayDisplay, (self.WIDTH-63,27))
         self.game.screen.blit(self.dayNumber, (self.WIDTH-40,52))
 
-        pass
+        
     def event_handler(self, event):
 
         if event.type == pygame.MOUSEBUTTONDOWN: 
@@ -332,6 +332,7 @@ class CameraScene(Scene):
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 1:
                     Settings.cameraCurrent = 1
                 self.game.scene = CameraScene(self.game, "I")
+                Settings.current_screen = "I"
 
             #2
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-350+Settings.screen_top+40: 
@@ -344,6 +345,7 @@ class CameraScene(Scene):
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 2:
                     Settings.cameraCurrent = 2
                 self.game.scene = CameraScene(self.game, "H")
+                Settings.current_screen = "H"
 
             #3
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-300+Settings.screen_top+40: 
@@ -356,6 +358,7 @@ class CameraScene(Scene):
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 3:
                     Settings.cameraCurrent = 3 
                 self.game.scene = CameraScene(self.game, "G")
+                Settings.current_screen = "G"
 
             #4
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-300+Settings.screen_top+40: 
@@ -368,6 +371,7 @@ class CameraScene(Scene):
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 4:
                     Settings.cameraCurrent = 4
                 self.game.scene = CameraScene(self.game, "E")
+                Settings.current_screen = "E"
 
             #5
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-250+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-250+Settings.screen_top+40: 
@@ -380,6 +384,7 @@ class CameraScene(Scene):
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 5:
                     Settings.cameraCurrent = 5
                 self.game.scene = CameraScene(self.game, "D")
+                Settings.current_screen = "D"
 
             #6
             if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-250+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-250+Settings.screen_top+40: 
@@ -392,9 +397,11 @@ class CameraScene(Scene):
                 elif Settings.cameraPower == 1 and not Settings.cameraCurrent == 6:
                     Settings.cameraCurrent = 6
                 self.game.scene = CameraScene(self.game, "C")
+                Settings.current_screen = "C"
 
             if Settings.cameraPower == 0:
                 self.game.scene = CameraScene(self.game, "A")
+                Settings.current_screen = "A"
 
             #doors
             #1
