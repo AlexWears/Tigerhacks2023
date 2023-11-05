@@ -84,6 +84,9 @@ class Game:
                 if Settings.clock_time == 6:
                     Settings.new_clock_time = 0
                     Settings.old_clock_time = 0
+                    Settings.night += 1
+                    if Settings.night == 6:
+                        pass
 
             #self.character_sprites.update()
 
