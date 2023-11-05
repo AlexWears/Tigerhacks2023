@@ -22,10 +22,10 @@ class Settings:
     screen_bottom = 0
 
     # Character aggression settings [night 1, 2, 3, 4, 5] (between 1 and 20) (-1 to disable character)
-    benny_ag =   [10,2,6,5,16]
-    charlie_ag = [10,5,4,6,12]
-    fozie_ag =   [10,0,2,5,10]
-    frank_ag =   [10,1,2,3,4]
+    benny_ag =   [10,2,6,5,16] #first night 1
+    charlie_ag = [10,5,4,6,12] #first night 1
+    fozie_ag =   [10,0,2,5,10] #first night 3
+    frank_ag =   [10,1,2,3,4] #first night 0
     j0mr_ag = [-1,-1,-1,-1,-1]
 
     # Character start locations
@@ -63,7 +63,7 @@ class Settings:
         self.night = 0
 
         # Movement opportunity (milliseconds)
-        self.time_between_moves = 1000
+        self.time_between_moves = 1000 #should be 5000 for final version
         self.next_movement = 0
 
     @classmethod
