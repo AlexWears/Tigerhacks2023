@@ -212,10 +212,12 @@ class CameraScene(Scene):
         #sunroom
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(150, 22, 80, 30),  2, 0)
         #you dot
+        pygame.draw.rect(self.game.screen, self.color, pygame.Rect(149, 99, 12, 12),  0, 5)
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(150, 100, 10, 10),  0, 5)
         #you word
         self.game.screen.blit(self.you, (144,85)) 
         #camera 1
+        pygame.draw.rect(self.game.screen,self.color,[84,21,32,22])
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-350+Settings.screen_top+40: 
             pygame.draw.rect(self.game.screen,(238,44,44),[85,22,30,20]) 
             
@@ -226,6 +228,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[85,22,30,20])
         self.game.screen.blit(self.mapcam1, (88,28)) 
         #camera 2
+        pygame.draw.rect(self.game.screen,self.color,[14,99,32,22])
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-350+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-350+Settings.screen_top+40:
             pygame.draw.rect(self.game.screen,(238,44,44),[15,100,30,20]) 
             
@@ -236,6 +239,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[15,100,30,20])
         self.game.screen.blit(self.mapcam2, (18,105)) 
         #camera 3
+        pygame.draw.rect(self.game.screen,self.color,[106,237,32,22]) 
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-300+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-300+Settings.screen_top+40: 
             pygame.draw.rect(self.game.screen,(238,44,44),[107,238,30,20]) 
             
@@ -246,6 +250,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[107,238,30,20])
         self.game.screen.blit(self.mapCam3, (110,244)) 
         #camera 4
+        pygame.draw.rect(self.game.screen,self.color,[94,54,32,22])
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-300+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-300+Settings.screen_top+40:  
             pygame.draw.rect(self.game.screen,(238,44,44),[95,55,30,20]) 
             
@@ -256,6 +261,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,55,30,20])
         self.game.screen.blit(self.mapCam4, (98,61)) 
         #camera 5
+        pygame.draw.rect(self.game.screen,self.color,[94,102,32,22]) 
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-250+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-250+Settings.screen_top+40:  
             pygame.draw.rect(self.game.screen,(238,44,44),[95,103,30,20]) 
             
@@ -266,6 +272,7 @@ class CameraScene(Scene):
                 pygame.draw.rect(self.game.screen,(91,91,91),[95,103,30,20])
         self.game.screen.blit(self.mapCam5, (98,109)) 
         #camera 6
+        pygame.draw.rect(self.game.screen,self.color,[54,204,32,22])
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-250+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-250+Settings.screen_top+40:
             pygame.draw.rect(self.game.screen,(238,44,44),[55,205,30,20]) 
             
