@@ -297,6 +297,8 @@ class CameraScene(Scene):
         self.game.screen.blit(self.power, (20,self.HEIGHT-90)) 
         self.game.screen.blit(self.powerPercent, (135,self.HEIGHT-90))
         self.game.screen.blit(self.usage, (20,self.HEIGHT-50)) 
+        pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(97, self.HEIGHT-55, 86, 36),  0, 3)
+        pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(97, self.HEIGHT-46, 92, 19),  0, 3)
         pygame.draw.rect(self.game.screen,(0,201,87),[100,self.HEIGHT-52,20,30])
         if Settings.cameraPower + Settings.door1power + Settings.door2power == 1:
             pygame.draw.rect(self.game.screen,(0,201,87),[120,self.HEIGHT-52,20,30])
