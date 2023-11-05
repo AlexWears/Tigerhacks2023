@@ -4,6 +4,7 @@ from scene import Location, Scene
 from character import Character
 from camera_scene import CameraScene
 from night_divider import NightDividerScene
+from main_menu import MainMenuScene
 
 class Game:
     # initialize pygame and create window
@@ -25,14 +26,14 @@ class Game:
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
         #self.scene = CameraScene(self, "A")
-        self.scene = NightDividerScene(self, "")
+        self.scene = MainMenuScene(self, "")
 
         self.characters = []
         
-        self.benny = Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.png", 0) #benny.bmp
-        self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.png", 1) #charlie.bmp
-        self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.png", 2) #fozie.bmp
-        self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.png", 3) #frank.bmp
+        self.benny = Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.png", 0)
+        self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.png", 1)
+        self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.png", 2)
+        self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.png", 3)
 
         self.characters.append(self.benny)
         self.characters.append(self.charlie)

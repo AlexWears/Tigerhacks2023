@@ -18,7 +18,7 @@ class Location:
     }
 
     location_image = {
-        "Main Menu": "",
+        "Main Menu": "backgrounds/Title Screen.bmp",
         "End Screen": "",
         "A": "backgrounds/lvr00.bmp",
         "B": "",
