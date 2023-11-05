@@ -78,8 +78,8 @@ class Game:
             self.full_screen.blit(self.screen, (Settings.screen_left, Settings.screen_top))
 
             self.scene.draw()
-            self.sprites.draw(self.screen)
-            self.character_sprites.draw(self.screen)
+            for character in self.character_sprites.sprites():
+                character.draw()
 
             # Done after drawing everything to the screen
             pygame.display.flip()

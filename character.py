@@ -25,10 +25,8 @@ class Character(pygame.sprite.Sprite):
 
 
     def update(self):
-        if(self.loc == Settings.current_screen):
-            self.on_screen = True
-        else:
-            self.on_screen = False
+        print(self.loc)
+        print(Settings.current_screen)
 
         if (secrets.randbelow(20) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 20) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
             self.prev_loc = self.loc
@@ -37,10 +35,12 @@ class Character(pygame.sprite.Sprite):
             print(self.name + " has taken the opportunity to move from " + self.prev_loc + " " + self.loc + ".\n")
 
     def draw(self):
+        if self.loc == Settings.current_screen:
+            self.on_screen = True
+        else:
+            self.on_screen = False
         if self.on_screen:
-            self.game.scene.blit(self.image, self.rect)
-        
-        pass
+            self.game.screen.blit(self.image, self.rect)
 
 
 

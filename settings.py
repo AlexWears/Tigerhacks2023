@@ -22,7 +22,7 @@ class Settings:
     screen_bottom = 0
 
     # Character aggression settings [night 1, 2, 3, 4, 5] (between 1 and 20) (-1 to disable character)
-    benny_ag =   [1,2,6,5,16]
+    benny_ag =   [20,2,6,5,16]
     charlie_ag = [1,5,4,6,12]
     fozie_ag =   [3,0,2,5,10]
     frank_ag =   [0,1,2,3,4]
