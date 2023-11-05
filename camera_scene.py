@@ -520,7 +520,7 @@ class CameraScene(Scene):
                 Settings.clock_time = 12
                 Settings.powerLevel = 100
                 Settings.new_day = True
-                print(Settings.night)
+                
             if Settings.night >= 5:
                 self.game.character_sprites.empty()
                 self.game.scene = WinScene(self.game, "")
