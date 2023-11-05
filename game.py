@@ -13,7 +13,7 @@ class Game:
         pygame.init()
         pygame.mixer.init()  # For sound
         pygame.mixer.music.load("sounds/Grinch's Ultimatum - Pilotredsun [Extended].mp3")
-        pygame.mixer.music.set_volume(.1)
+        pygame.mixer.music.set_volume(0)
         pygame.mixer.music.play(-1)
         Settings.reset_settings()
         self.full_screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -95,6 +95,7 @@ class Game:
             if Settings.powerLevel <= 0:
                 Settings.powerLevel = 10000000
                 game.scene = BlackoutScene(self, "")
+
 
     def create_characters(self):
         self.characters.clear()

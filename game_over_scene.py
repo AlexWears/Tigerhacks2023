@@ -15,6 +15,10 @@ class GameOverScene(Scene):
         else:
             self.name = "benny"
         self.current_image = 1
+        self.sound_path = "sounds/screams/" + self.name + ".mp3"
+        pygame.mixer.music.set_volume(.25)
+        pygame.mixer.music.load(self.sound_path)
+        pygame.mixer.music.play()
                 
 
     def draw(self):
@@ -33,6 +37,7 @@ class GameOverScene(Scene):
             self.continue_text = self.font_continue.render("Press any key to continue...", True, Settings.WHITE)
             self.game.screen.blit(self.continue_text, (self.game.screen.get_width()/2 - self.continue_text.get_width()/2, self.game.screen.get_height()/1.3 - self.continue_text.get_height()/2))
             try: 
+                pygame.mixer.music.set_volume(0)
                 pygame.mixer.music.pause()
             except:
                 pass
@@ -40,5 +45,7 @@ class GameOverScene(Scene):
     def event_handler(self, event):
         if event.type == pygame.KEYDOWN and self.current_image >= 10:
             Settings.reset_settings()
+            pygame.mixer.music.load("sounds/Grinch's Ultimatum - Pilotredsun [Extended].mp3")
             pygame.mixer.music.play()
+            pygame.mixer.music.set_volume(.15)
             self.game.scene = MainMenuScene(self.game, "")

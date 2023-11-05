@@ -12,6 +12,9 @@ class BlackoutScene(Scene):
 
         #print(pygame.time.get_ticks())
         self.target_time = pygame.time.get_ticks() + 5000
+        pygame.mixer.music.load("sounds/screams/j0mr.mp3")
+        pygame.mixer.music.set_volume(.25)
+        pygame.mixer.music.play()
         #print(self.target_time)
         
 

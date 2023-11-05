@@ -24,3 +24,10 @@ class NightDividerScene(Scene):
         if event.type == pygame.KEYDOWN:
             pygame.mixer.music.play()
             self.game.scene = CameraScene(self.game, "A")
+            try: 
+                pygame.mixer.music.load("sounds/phone calls/night" + str(Settings.night+1) + ".mp3")
+                pygame.mixer.music.queue("sounds/Grinch's Ultimatum - Pilotredsun [Extended].mp3")
+                pygame.mixer.music.set_volume(.25)
+                pygame.mixer.music.play()
+            except:
+                pass

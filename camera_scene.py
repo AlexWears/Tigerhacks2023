@@ -12,6 +12,7 @@ class CameraScene(Scene):
         self.WIDTH = Settings.width
         self.difference = Settings.height + Settings.screen_bottom + Settings.screen_top
         Settings.keep_track_of_time = True
+        pygame.mixer.music.set_volume(.15)
 
         # white color 
         self.color = (255,255,255) 
@@ -499,6 +500,7 @@ class CameraScene(Scene):
 
     def update(self):
         super().update()
+            
         Location.location_image["A"] = "backgrounds/lvr" + str(Settings.door1power) + str(Settings.door2power) + ".bmp"
          #timer
         Settings.new_time = pygame.time.get_ticks()
