@@ -65,8 +65,9 @@ class CameraScene(Scene):
         self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color)
 
         #clock
-        self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color)
-        self.dayDisplay = self.smallfont.render('Night ' + str(int(Settings.night + 1)),True,self.color)
+        self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,(255,0,0))
+        self.dayDisplay = self.smallfont.render('Night',True,self.color)
+        self.dayNumber = self.smallfont.render(str(int(Settings.night + 1)),True,self.color)
 
     def create_scene_sprites(self):
         for c in self.game.characters:
@@ -305,9 +306,12 @@ class CameraScene(Scene):
         else: Settings.powerUsage = .1
 
         #clock and day
-        pygame.draw.rect(self.game.screen,self.color_dark,[self.WIDTH-100,30,85,55])
-        self.game.screen.blit(self.clockTime, (self.WIDTH-100,30))
-        self.game.screen.blit(self.dayDisplay, (self.WIDTH-95,55))
+        pygame.draw.rect(self.game.screen,self.color_dark,[self.WIDTH-63,27,58,48])
+        pygame.draw.rect(self.game.screen, Settings.BLACK, pygame.Rect(self.WIDTH-170, 25, 100, 50),  0, 3)
+        pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-170, 25, 100, 50),  7, 3)
+        self.game.screen.blit(self.clockTime, (self.WIDTH-150,40))
+        self.game.screen.blit(self.dayDisplay, (self.WIDTH-63,27))
+        self.game.screen.blit(self.dayNumber, (self.WIDTH-40,52))
 
         pass
     def event_handler(self, event):
