@@ -75,6 +75,8 @@ class Game:
             if Settings.new_time >= Settings.old_time + 1000:
                 Settings.powerLevel -= Settings.powerUsage
                 Settings.old_time = Settings.new_time
+                if Settings.powerLevel <= 0:
+                    pass
             Settings.new_clock_time = pygame.time.get_ticks()
             if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
                 Settings.old_clock_time = Settings.new_clock_time
