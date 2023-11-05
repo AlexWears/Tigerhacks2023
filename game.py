@@ -80,6 +80,7 @@ class Game:
             self.scene.draw()
             for character in self.character_sprites.sprites():
                 character.draw()
+            self.sprites.draw()
 
             # Done after drawing everything to the screen
             pygame.display.flip()
