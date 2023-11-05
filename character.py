@@ -26,18 +26,24 @@ class Character(pygame.sprite.Sprite):
         self.door1_x = 0 - 1/2 * self.rect.width
         self.door2_x = Settings.width - self.rect.width / 2
         #self.rect.update((position * Settings.width / 4 + 25), 0, .25, .25)
-        # self.rect.scale_by_ip(.25, .25)
+        #self.rect.scale_by_ip(.25, .25)
 
 
     def update(self):
-        print(self.loc)
-        print(Settings.current_screen)
+        #print(self.loc)
+        #print(Settings.current_screen)
+        if self.on_screen == False:
+            if (secrets.randbelow(20) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 20) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
+                #if in B and door 2 is open (0) then game over (jumpscare)
+                #if in F and door 1 is open (0) then game over (jumpscare)
+                #else override move (go to H)
+                
+                self.prev_loc = self.loc
+                self.move = random.choice(Location.adjacent_locations[self.loc]) # Take even random chance to go to any adjacent room
+                if self.move != Settings.current_screen: # Then check that the character is not trying to move into the current room
+                    self.loc = self.move
+                    print(self.name + " has taken the opportunity to move from " + self.prev_loc + " " + self.loc + ".\n")
 
-        if (secrets.randbelow(20) + 1) <= self.aggression[Settings.night]: #if random number (between 1 and 20) is less than aggression (as nights go by, aggression increases so there is a greater chance to take the movement opportunity each night.)
-            self.prev_loc = self.loc
-            #take even random chance to go to any adjacent room
-            self.loc = random.choice(Location.adjacent_locations[self.loc])
-            print(self.name + " has taken the opportunity to move from " + self.prev_loc + " " + self.loc + ".\n")
 
     def draw(self):
         if self.loc == Settings.current_screen:
