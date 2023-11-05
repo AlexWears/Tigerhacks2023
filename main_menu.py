@@ -15,8 +15,10 @@ class MainMenuScene(Scene):
 
         self.play_btn_text = self.font_button.render("Press Any Button to Play", True, Settings.WHITE)
         self.quit_btn_text = self.font_button.render("[Esc] to Quit", True, Settings.WHITE)
+        self.night_text = self.font_button.render("Night " + str(Settings.night + 1), True, Settings.WHITE)
         self.play_rect = self.play_btn_text.get_rect()
         self.quit_rect = self.quit_btn_text.get_rect()
+        self.night_rect = self.night_text.get_rect()
         self.game.create_characters()
         
         
@@ -26,6 +28,8 @@ class MainMenuScene(Scene):
         super().draw()
         self.game.screen.blit(self.play_btn_text, (4*self.game.screen.get_width()/5 - self.play_btn_text.get_width()/2, 2*self.game.screen.get_height()/3 - self.play_btn_text.get_height()/2))
         self.game.screen.blit(self.quit_btn_text, (4*self.game.screen.get_width()/5 - self.quit_btn_text.get_width()/2, 4*self.game.screen.get_height()/5 - self.quit_btn_text.get_height()/2))
+        self.game.screen.blit(self.night_text, (4*self.game.screen.get_width()/5 - self.quit_btn_text.get_width()/2, 6*self.game.screen.get_height()/7 - self.quit_btn_text.get_height()/2))
+
 
 
     def event_handler(self, event):
