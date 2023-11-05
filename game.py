@@ -33,12 +33,13 @@ class Game:
         self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.png", 1)
         self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.png", 2)
         self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.png", 3)
+        self.j0mr = Character(self, "J0mR", "", 0, "sprites/dark jimr.png", -1)
 
         self.characters.append(self.benny)
         self.characters.append(self.charlie)
         self.characters.append(self.fozie)
         self.characters.append(self.frank)
-        # characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
+        self.characters.append(self.j0mr)
 
         self.character_sprites = pygame.sprite.Group(self.characters)
         self.scene = MainMenuScene(self, "")
