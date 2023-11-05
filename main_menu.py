@@ -17,6 +17,7 @@ class MainMenuScene(Scene):
         self.quit_btn_text = self.font_button.render("[Esc] to Quit", True, Settings.WHITE)
         self.play_rect = self.play_btn_text.get_rect()
         self.quit_rect = self.quit_btn_text.get_rect()
+        self.game.create_characters()
         
         
 

@@ -4,6 +4,7 @@ import random
 
 from settings import Settings
 from scene import Location
+from game_over_scene import GameOverScene
 
 
 class Character(pygame.sprite.Sprite):
@@ -37,6 +38,9 @@ class Character(pygame.sprite.Sprite):
                 #if in B and door 2 is open (0) then game over (jumpscare)
                 #if in F and door 1 is open (0) then game over (jumpscare)
                 #else override move (go to H)
+                if (self.loc == "B" and Settings.door2power == 0) or (self.loc == "F" and Settings.door1power == 0):
+                    self.game.scene = GameOverScene(self.game, "")
+
                 
                 self.prev_loc = self.loc
                 self.move = random.choice(Location.adjacent_locations[self.loc]) # Take even random chance to go to any adjacent room

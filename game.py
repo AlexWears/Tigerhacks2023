@@ -26,7 +26,6 @@ class Game:
         # Group all the sprites together for ease of update
         self.sprites = pygame.sprite.Group()
         #self.scene = CameraScene(self, "A")
-        self.scene = MainMenuScene(self, "")
 
         self.characters = []
         
@@ -42,6 +41,7 @@ class Game:
         # characters.append(Character("J0mR", 0, 1, "j0mr.bmp"))
 
         self.character_sprites = pygame.sprite.Group(self.characters)
+        self.scene = MainMenuScene(self, "")
 
 
     def run(self):
@@ -85,6 +85,22 @@ class Game:
             # Done after drawing everything to the screen
             pygame.display.flip()
             pygame.display.update()
+
+    def create_characters(self):
+        self.characters.clear()
+        self.character_sprites.empty()
+
+        self.benny = Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.png", 0)
+        self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.png", 1)
+        self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.png", 2)
+        self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.png", 3)
+
+        self.characters.append(self.benny)
+        self.characters.append(self.charlie)
+        self.characters.append(self.fozie)
+        self.characters.append(self.frank)
+
+        self.character_sprites = pygame.sprite.Group(self.characters)
 
 
 

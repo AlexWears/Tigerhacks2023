@@ -34,17 +34,6 @@ class Settings:
     fozie_s_loc = "H"
     frank_s_loc = "G"
     j0mr_s_loc = 0
-
-    #Power settings
-    door1power = 0
-    door2power = 0
-    cameraPower = 0
-    cameraCurrent = 0
-    powerLevel = 100
-    powerUsage = .1
-
-    # Camera settings
-    current_screen = 'A' #default to main room
     
     # Current Night (0 through 4)
     night = 0
@@ -58,6 +47,9 @@ class Settings:
         self.clock_time = 12
         self.new_clock_time = 0
         self.old_clock_time = 0
+            
+        # Camera settings
+        self.current_screen = 'A' #default to main room
 
         # Current Night (0 through 4)
         self.night = 0
@@ -65,6 +57,14 @@ class Settings:
         # Movement opportunity (milliseconds)
         self.time_between_moves = 1000
         self.next_movement = 0
+
+            #Power settings
+        self.door1power = 0
+        self.door2power = 0
+        self.cameraPower = 0
+        self.cameraCurrent = 0
+        self.powerLevel = 100
+        self.powerUsage = .1
 
     @classmethod
     def define_screen(self, display_height, display_width):

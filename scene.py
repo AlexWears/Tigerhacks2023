@@ -36,8 +36,11 @@ class Scene:
     def __init__(self, game, location):
         self.location = location
         self.game = game
-        self.background_image = pygame.image.load(Location.location_image[location]).convert()
-        game.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
+        try:
+            self.background_image = pygame.image.load(Location.location_image[location]).convert()
+            game.background_image = pygame.transform.scale(self.background_image, (Settings.width, Settings.height))
+        except:
+            pass
         self.scene_sprites = pygame.sprite.Group()
 
     def update(self):
