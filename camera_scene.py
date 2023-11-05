@@ -473,6 +473,6 @@ class CameraScene(Scene):
             if Settings.clock_time == 12:
                 Settings.clock_time = 1
             else: Settings.clock_time += 1
-            self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,self.color)
+            self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,(255,0,0))
 
 
