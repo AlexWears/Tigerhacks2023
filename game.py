@@ -29,10 +29,10 @@ class Game:
 
         self.characters = []
         
-        self.benny = Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.bmp")
-        self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.bmp")
-        self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.bmp")
-        self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.bmp")
+        self.benny = Character(self,"Benny", 'H', Settings.benny_ag, "sprites/benny.bmp", 0)
+        self.charlie = Character(self, "Charlie", 'H', Settings.charlie_ag, "sprites/charlie.bmp", 1)
+        self.fozie = Character(self, "Fozie", 'H', Settings.fozie_ag, "sprites/fozie.bmp", 2)
+        self.frank = Character(self, "Frank", 'G', Settings.frank_ag, "sprites/frank.bmp", 3)
 
         self.characters.append(self.benny)
         self.characters.append(self.charlie)
@@ -78,6 +78,7 @@ class Game:
 
             self.scene.draw()
             self.sprites.draw(self.screen)
+            self.character_sprites.draw(self.screen)
 
             # Done after drawing everything to the screen
             pygame.display.flip()
