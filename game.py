@@ -73,30 +73,6 @@ class Game:
 
                     self.character_sprites.update()
                     Settings.next_movement = pygame.time.get_ticks() + Settings.time_between_moves
-            Settings.new_time = pygame.time.get_ticks()
-            if Settings.new_time >= Settings.old_time + 1000:
-                Settings.powerLevel -= Settings.powerUsage
-                Settings.old_time = Settings.new_time
-                #blackout
-                if Settings.powerLevel <= 0:
-                    self.scene = BlackoutScene(self, "")
-
-            if Settings.keep_track_of_time:
-                Settings.new_clock_time = pygame.time.get_ticks()
-                if Settings.new_clock_time >= Settings.old_clock_time + 900: # (1000*90):
-                    Settings.old_clock_time = Settings.new_clock_time
-                    if Settings.clock_time == 12:
-                        Settings.clock_time = 1
-                    else: Settings.clock_time += 1
-                    if Settings.clock_time >= 6 and Settings.clock_time != 12:
-                        Settings.new_clock_time = 0
-                        Settings.old_clock_time = 0
-                        #night change
-                        Settings.night += 1
-                        self.scene = NightDividerScene(self, "")
-                        #win
-                        if Settings.night == 6:
-                            pass
 
             #self.character_sprites.update()
 
@@ -111,6 +87,10 @@ class Game:
             # Done after drawing everything to the screen
             pygame.display.flip()
             pygame.display.update()
+
+            if Settings.new_day:
+                Settings.new_day = False
+                self.scene = NightDividerScene(self, "")
 
     def create_characters(self):
         self.characters.clear()

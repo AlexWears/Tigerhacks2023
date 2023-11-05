@@ -37,7 +37,7 @@ class Settings:
     
     # Current Night (0 through 4)
     night = 0
-    keep_track_of_time = False
+    new_day = False
 
     @classmethod
     def reset_settings(self):
