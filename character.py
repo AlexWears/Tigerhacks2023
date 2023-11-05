@@ -21,7 +21,7 @@ class Character(pygame.sprite.Sprite):
         self.on_screen = False
 
         self.rect = self.image.get_rect()
-        self.rect.update((position * Settings.width / 4), 0, (Settings.width / 4), Settings.height)
+        self.rect.update((position * Settings.width / 4 + 25), 0, (Settings.width / 4), Settings.height)
 
 
     def update(self):
