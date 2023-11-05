@@ -20,6 +20,7 @@ class Location:
     location_image = {
         "Main Menu": "backgrounds/Title Screen.bmp",
         "End Screen": "",
+        "Blackout": "backgrounds/power_off_lvr.bmp",
         "A": "backgrounds/lvr00.bmp",
         "B": "",
         "C": "backgrounds/cam6.bmp",
