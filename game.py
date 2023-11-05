@@ -92,6 +92,9 @@ class Game:
                 Settings.new_day = False
                 self.scene = NightDividerScene(self, "")
 
+            if Settings.powerLevel <= 0:
+                game.scene = BlackoutScene(self, "")
+
     def create_characters(self):
         self.characters.clear()
         self.character_sprites.empty()
