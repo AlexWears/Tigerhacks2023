@@ -12,6 +12,7 @@ class Character(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.game = game
         self.image = pygame.image.load(sprite)
+        self.image = pygame.transform.scale(self.image, (Settings.width / 7, Settings.height / 1.7))
         
         self.name = name
         self.loc = s_loc
@@ -19,9 +20,13 @@ class Character(pygame.sprite.Sprite):
         self.position = position
 
         self.on_screen = False
-
+        self.blit_location= ((position * Settings.width / 4), Settings.height / 3.2)
         self.rect = self.image.get_rect()
-        self.rect.update((position * Settings.width / 4 + 25), 0, (Settings.width / 4), Settings.height)
+
+        self.door1_x = 0 - 1/2 * self.rect.width
+        self.door2_x = Settings.width - self.rect.width / 2
+        #self.rect.update((position * Settings.width / 4 + 25), 0, .25, .25)
+        # self.rect.scale_by_ip(.25, .25)
 
 
     def update(self):
@@ -39,8 +44,16 @@ class Character(pygame.sprite.Sprite):
             self.on_screen = True
         else:
             self.on_screen = False
+
+        if Settings.current_screen == "A":
+            if self.loc == "F" and Settings.door1power == 0:
+                self.game.screen.blit(self.image, (self.door1_x, Settings.height / 4.75))
+            if self.loc == "B" and Settings.door2power == 0:
+                self.game.screen.blit(self.image, (self.door2_x, Settings.height / 4.75))
+            else:
+                return
         if self.on_screen:
-            self.game.screen.blit(self.image, self.rect)
+            self.game.screen.blit(self.image, self.blit_location)
 
 
 
