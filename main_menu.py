@@ -28,9 +28,9 @@ class MainMenuScene(Scene):
 
 
     def event_handler(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if self.play_rect.collidepoint(pygame.mouse.get_pos()):
+        if event.type == pygame.KEYDOWN:
+            #if self.play_rect.collidepoint(pygame.mouse.get_pos()):
                 pygame.mixer.music.play()
                 self.game.scene = NightDividerScene(self.game, "")
-            elif self.quit_rect.collidepoint(pygame.mouse.get_pos()):
-                pygame.quit()
+            #elif self.quit_rect.collidepoint(pygame.mouse.get_pos()):
+            #    pygame.quit()
