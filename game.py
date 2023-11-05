@@ -71,6 +71,19 @@ class Game:
 
                     self.character_sprites.update()
                     Settings.next_movement = pygame.time.get_ticks() + Settings.time_between_moves
+            Settings.new_time = pygame.time.get_ticks()
+            if Settings.new_time >= Settings.old_time + 1000:
+                Settings.powerLevel -= Settings.powerUsage
+                Settings.old_time = Settings.new_time
+            Settings.new_clock_time = pygame.time.get_ticks()
+            if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
+                Settings.old_clock_time = Settings.new_clock_time
+                if Settings.clock_time == 12:
+                    Settings.clock_time = 1
+                else: Settings.clock_time += 1
+                if Settings.clock_time == 6:
+                    Settings.new_clock_time = 0
+                    Settings.old_clock_time = 0
 
             #self.character_sprites.update()
 
