@@ -6,11 +6,11 @@ class Location:
 
     adjacent_locations = {
         "A": ["B", "F"],
-        "B": ["A", "C"],
+        "B": ["H"],
         "C": ["B", "D", "G", "H"],
         "D": ["C", "E"],
         "E": ["D", "H"],
-        "F": ["A", "I"],
+        "F": ["H"],
         "G": ["C", "H", "J"],
         "H": ["C", "E", "G", "I"],
         "I": ["F", "H"],
