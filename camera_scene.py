@@ -517,6 +517,7 @@ class CameraScene(Scene):
                 Settings.old_clock_time = 0
                 Settings.night += 1
                 Settings.clock_time = 12
+                Settings.powerLevel = 100
                 Settings.new_day = True
                 if Settings.night == 6:
 
