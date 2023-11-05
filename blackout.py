@@ -10,7 +10,6 @@ class BlackoutScene(Scene):
         super().__init__(game, "Blackout")
         pygame.mixer.music.pause()
         self.game = game
-        Settings.keep_track_of_time = True
         
         self.j0mr_time = pygame.time.get_ticks() + 5000 # target time is 20 seconds away
         self.over_time = self.j0mr_time + 5000 # game over time is 5 seconds after j0mr shows up
@@ -31,6 +30,6 @@ class BlackoutScene(Scene):
 
     def draw(self):
         super().draw()
-        self.game.characters[4].draw()
+        #self.game.characters[4].draw()
 
     

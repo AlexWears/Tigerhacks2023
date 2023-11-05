@@ -507,7 +507,7 @@ class CameraScene(Scene):
             self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color)
             self.powerPercentDark = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
         Settings.new_clock_time = pygame.time.get_ticks()
-        if Settings.new_clock_time >= Settings.old_clock_time + 900:# (1000*90):
+        if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
             Settings.old_clock_time = Settings.new_clock_time
             if Settings.clock_time == 12:
                 Settings.clock_time = 1
