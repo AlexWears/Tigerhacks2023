@@ -319,7 +319,9 @@ class CameraScene(Scene):
         if event.type == pygame.MOUSEBUTTONDOWN: 
             #power
             if self.WIDTH-70 <= self.mouse[0] <= self.WIDTH-70+30 and self.HEIGHT-390+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-390+30+Settings.screen_top: 
-                pygame.quit()
+                Settings.cameraPower = 0
+                Settings.cameraCurrent = 0
+                Settings.current_screen = "A"
         #cameras
             #1
             if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-350+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-350+Settings.screen_top+40: 
