@@ -13,8 +13,8 @@ class MainMenuScene(Scene):
         
         self.font_button = pygame.font.Font("font/corbel.ttf",40)
 
-        self.play_btn_text = self.font_button.render("Play", True, Settings.WHITE)
-        self.quit_btn_text = self.font_button.render("Quit", True, Settings.WHITE)
+        self.play_btn_text = self.font_button.render("Press Any Button to Play", True, Settings.WHITE)
+        self.quit_btn_text = self.font_button.render("[Esc] to Quit", True, Settings.WHITE)
         self.play_rect = self.play_btn_text.get_rect()
         self.quit_rect = self.quit_btn_text.get_rect()
         
@@ -29,8 +29,5 @@ class MainMenuScene(Scene):
 
     def event_handler(self, event):
         if event.type == pygame.KEYDOWN:
-            #if self.play_rect.collidepoint(pygame.mouse.get_pos()):
-                pygame.mixer.music.play()
-                self.game.scene = NightDividerScene(self.game, "")
-            #elif self.quit_rect.collidepoint(pygame.mouse.get_pos()):
-            #    pygame.quit()
+            pygame.mixer.music.play()
+            self.game.scene = NightDividerScene(self.game, "")
