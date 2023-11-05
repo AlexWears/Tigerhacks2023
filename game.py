@@ -4,6 +4,7 @@ from scene import Location, Scene
 from character import Character
 from camera_scene import CameraScene
 from night_divider import NightDividerScene
+from blackout import BlackoutScene
 from main_menu import MainMenuScene
 
 class Game:
@@ -78,7 +79,7 @@ class Game:
                 Settings.old_time = Settings.new_time
                 #blackout
                 if Settings.powerLevel <= 0:
-                    pass
+                    self.scene = BlackoutScene(self, "")
 
             if Settings.keep_track_of_time:
                 Settings.new_clock_time = pygame.time.get_ticks()

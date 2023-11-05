@@ -22,10 +22,10 @@ class Settings:
     screen_bottom = 0
 
     # Character aggression settings [night 1, 2, 3, 4, 5] (between 1 and 20) (-1 to disable character)
-    benny_ag =   [10,2,6,5,16] #first night 1
-    charlie_ag = [10,5,4,6,12] #first night 1
-    fozie_ag =   [10,0,2,5,10] #first night 3
-    frank_ag =   [10,1,2,3,4] #first night 0
+    benny_ag =   [0,2,6,5,16] #first night 1
+    charlie_ag = [0,5,4,6,12] #first night 1
+    fozie_ag =   [0,0,2,5,10] #first night 3
+    frank_ag =   [0,1,2,3,4] #first night 0
     j0mr_ag = [-1,-1,-1,-1,-1]
 
     # Character start locations
@@ -64,7 +64,7 @@ class Settings:
         self.door2power = 0
         self.cameraPower = 0
         self.cameraCurrent = 0
-        self.powerLevel = 100
+        self.powerLevel = 10 #change back to 100
         self.powerUsage = .1
 
     @classmethod
