@@ -45,6 +45,7 @@ class CameraScene(Scene):
 
         #map labels
         self.you = self.tinyfont.render('You', True, self.color_dark)
+        self.youlight = self.tinyfont.render('You', True, self.color)
         self.mapcam1 = self.minifont.render('Cam 1', True, self.color)
         self.mapcam2 = self.minifont.render('Cam 2', True, self.color)
         self.mapCam3 = self.minifont.render('Cam 3', True, self.color)
@@ -60,14 +61,19 @@ class CameraScene(Scene):
         
         #power bar words
         self.power = self.smallfont.render('Power left:', True, self.color)
+        self.powerdark = self.smallfont.render('Power left:', True, self.color_dark)
         self.usage = self.smallfont.render('Usage:',True, self.color)
+        self.usagedark = self.smallfont.render('Usage:',True, self.color_dark)
         #varables for power
         self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color)
+        self.powerPercentDark = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
 
         #clock
         self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,(255,0,0))
         self.dayDisplay = self.smallfont.render('Night',True,self.color)
+        self.dayDisplayDark = self.smallfont.render('Night',True,self.color_dark)
         self.dayNumber = self.smallfont.render(str(int(Settings.night + 1)),True,self.color)
+        self.dayNumberDark = self.smallfont.render(str(int(Settings.night + 1)),True,self.color_dark)
 
     def create_scene_sprites(self):
         for c in self.game.characters:
@@ -215,6 +221,10 @@ class CameraScene(Scene):
         pygame.draw.rect(self.game.screen, self.color, pygame.Rect(149, 99, 12, 12),  0, 5)
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(150, 100, 10, 10),  0, 5)
         #you word
+        self.game.screen.blit(self.youlight, (143,84))
+        self.game.screen.blit(self.youlight, (143,86))
+        self.game.screen.blit(self.youlight, (145,84))
+        self.game.screen.blit(self.youlight, (145,86))
         self.game.screen.blit(self.you, (144,85)) 
         #camera 1
         pygame.draw.rect(self.game.screen,self.color,[84,21,32,22])
@@ -292,11 +302,23 @@ class CameraScene(Scene):
         elif Settings.cameraCurrent == 6: self.game.screen.blit(self.kitchen, (self.WIDTH/2,self.HEIGHT-50))
 
         #power bar
-        pygame.draw.rect(self.game.screen,self.color_dark,[18,self.HEIGHT-90,170,30])
-        pygame.draw.rect(self.game.screen,self.color_dark,[18,self.HEIGHT-50,75,25])
+        self.game.screen.blit(self.powerdark, (19,self.HEIGHT-89)) 
+        self.game.screen.blit(self.powerdark, (19,self.HEIGHT-91)) 
+        self.game.screen.blit(self.powerdark, (21,self.HEIGHT-89)) 
+        self.game.screen.blit(self.powerdark, (21,self.HEIGHT-91)) 
         self.game.screen.blit(self.power, (20,self.HEIGHT-90)) 
+        self.game.screen.blit(self.powerPercentDark, (134,self.HEIGHT-89))
+        self.game.screen.blit(self.powerPercentDark, (134,self.HEIGHT-91))
+        self.game.screen.blit(self.powerPercentDark, (136,self.HEIGHT-89))
+        self.game.screen.blit(self.powerPercentDark, (136,self.HEIGHT-91))
         self.game.screen.blit(self.powerPercent, (135,self.HEIGHT-90))
+        self.game.screen.blit(self.usagedark, (19,self.HEIGHT-51)) 
+        self.game.screen.blit(self.usagedark, (19,self.HEIGHT-49)) 
+        self.game.screen.blit(self.usagedark, (21,self.HEIGHT-51)) 
+        self.game.screen.blit(self.usagedark, (21,self.HEIGHT-49)) 
         self.game.screen.blit(self.usage, (20,self.HEIGHT-50)) 
+        pygame.draw.rect(self.game.screen, self.color, pygame.Rect(96, self.HEIGHT-56, 88, 38),  0, 3)
+        pygame.draw.rect(self.game.screen, self.color, pygame.Rect(96, self.HEIGHT-47, 94, 21),  0, 3)
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(97, self.HEIGHT-55, 86, 36),  0, 3)
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(97, self.HEIGHT-46, 92, 19),  0, 3)
         pygame.draw.rect(self.game.screen,(0,201,87),[100,self.HEIGHT-52,20,30])
@@ -315,11 +337,18 @@ class CameraScene(Scene):
         else: Settings.powerUsage = .1
 
         #clock and day
-        pygame.draw.rect(self.game.screen,self.color_dark,[self.WIDTH-63,27,58,48])
         pygame.draw.rect(self.game.screen, Settings.BLACK, pygame.Rect(self.WIDTH-170, 25, 100, 50),  0, 3)
         pygame.draw.rect(self.game.screen, (91, 91, 91), pygame.Rect(self.WIDTH-170, 25, 100, 50),  7, 3)
         self.game.screen.blit(self.clockTime, (self.WIDTH-150,40))
+        self.game.screen.blit(self.dayDisplayDark, (self.WIDTH-62,26))
+        self.game.screen.blit(self.dayDisplayDark, (self.WIDTH-62,28))
+        self.game.screen.blit(self.dayDisplayDark, (self.WIDTH-64,26))
+        self.game.screen.blit(self.dayDisplayDark, (self.WIDTH-64,28))
         self.game.screen.blit(self.dayDisplay, (self.WIDTH-63,27))
+        self.game.screen.blit(self.dayNumberDark, (self.WIDTH-39,51))
+        self.game.screen.blit(self.dayNumberDark, (self.WIDTH-39,53))
+        self.game.screen.blit(self.dayNumberDark, (self.WIDTH-41,51))
+        self.game.screen.blit(self.dayNumberDark, (self.WIDTH-41,53))
         self.game.screen.blit(self.dayNumber, (self.WIDTH-40,52))
 
         
@@ -437,6 +466,7 @@ class CameraScene(Scene):
             Settings.powerLevel -= Settings.powerUsage
             Settings.old_time = Settings.new_time
             self.powerPercent = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color)
+            self.powerPercentDark = self.smallfont.render(str(int(Settings.powerLevel)) + '%',True,self.color_dark)
         Settings.new_clock_time = pygame.time.get_ticks()
         if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
             Settings.old_clock_time = Settings.new_clock_time
