@@ -520,15 +520,7 @@ class CameraScene(Scene):
                 Settings.powerLevel = 100
                 Settings.new_day = True
                 if Settings.night == 6:
-
-
-
                     pass
-
-
-
-
-
             self.clockTime = self.smallfont.render(str(int(Settings.clock_time)) + 'AM',True,(255,0,0))
 
 
