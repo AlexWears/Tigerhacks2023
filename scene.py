@@ -43,6 +43,7 @@ class Scene:
         except:
             pass
         self.scene_sprites = pygame.sprite.Group()
+        Settings.keep_track_of_time = False
 
     def update(self):
         pass
