@@ -2,3 +2,6 @@ Music credits go to PilotRedSun on YouTube.
 
 The story, all names, characters, and incidents portrayed in this production are fictitious. 
 No identification with actual persons (living or deceased), places, buildings, and products is intended or should be inferred.
+
+This game requires python 3.11.4 and a recent version of the library pygame to run.
+From the folder Tigerhacks2023, run game.py using python in order to play.
