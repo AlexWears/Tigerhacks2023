@@ -36,7 +36,9 @@ class CameraScene(Scene):
         self.cam5 = self.smallfont.render('5' , True , self.color) 
         self.cam6 = self.smallfont.render('6' , True , self.color) 
         self.door1 = self.largefont.render('1' , True , self.color) 
+        self.door1dark = self.largefont.render('1' , True , self.color_dark) 
         self.door2 = self.largefont.render('2' , True , self.color) 
+        self.door2dark = self.largefont.render('2' , True , self.color_dark) 
         self.powerButton = self.smallfont.render('X' , True , self.color) 
 
         #remote words
@@ -184,6 +186,15 @@ class CameraScene(Scene):
         #door 1
         if self.WIDTH-180 <= self.mouse[0] <= self.WIDTH-180+60 and self.HEIGHT-150+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-150+105+Settings.screen_top: 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-174,self.HEIGHT-144,60,105]) 
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-166, self.HEIGHT-134, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-142, self.HEIGHT-134, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-166, self.HEIGHT-100, 20, 50),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-142, self.HEIGHT-100, 20, 50),  1, 0)
+            pygame.draw.circle(self.game.screen, self.color, (self.WIDTH-170,self.HEIGHT-95), 4)
+            self.game.screen.blit(self.door1dark , (self.WIDTH-150,self.HEIGHT-103))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-150,self.HEIGHT-105))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-152,self.HEIGHT-103))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-152,self.HEIGHT-105))
             self.game.screen.blit(self.door1 , (self.WIDTH-151,self.HEIGHT-104)) 
             
         else: 
@@ -191,11 +202,29 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-176,self.HEIGHT-146,60,105]) 
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-174,self.HEIGHT-144,60,105]) 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-180,self.HEIGHT-150,60,105]) 
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-172, self.HEIGHT-140, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-148, self.HEIGHT-140, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-172, self.HEIGHT-106, 20, 50),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-148, self.HEIGHT-106, 20, 50),  1, 0)
+            pygame.draw.circle(self.game.screen, self.color, (self.WIDTH-176,self.HEIGHT-99), 4)
+            self.game.screen.blit(self.door1dark , (self.WIDTH-156,self.HEIGHT-111))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-156,self.HEIGHT-113))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-158,self.HEIGHT-111))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-158,self.HEIGHT-113))
             self.game.screen.blit(self.door1 , (self.WIDTH-157,self.HEIGHT-112)) 
 
         #door 2
         if self.WIDTH-100 <= self.mouse[0] <= self.WIDTH-100+60 and self.HEIGHT-150+Settings.screen_top <= self.mouse[1] <= self.HEIGHT-150+105+Settings.screen_top: 
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-94,self.HEIGHT-144,60,105]) 
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-86, self.HEIGHT-134, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-62, self.HEIGHT-134, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-86, self.HEIGHT-100, 20, 50),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-62, self.HEIGHT-100, 20, 50),  1, 0)
+            pygame.draw.circle(self.game.screen, self.color, (self.WIDTH-90,self.HEIGHT-95), 4)
+            self.game.screen.blit(self.door2dark , (self.WIDTH-70,self.HEIGHT-103))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-70,self.HEIGHT-105))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-72,self.HEIGHT-103))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-72,self.HEIGHT-105))
             self.game.screen.blit(self.door2 , (self.WIDTH-71,self.HEIGHT-104))  
             
         else: 
@@ -203,6 +232,15 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-96,self.HEIGHT-146,60,105]) 
             pygame.draw.rect(self.game.screen,Settings.BLACK,[self.WIDTH-94,self.HEIGHT-144,60,105])
             pygame.draw.rect(self.game.screen,self.color_light,[self.WIDTH-100,self.HEIGHT-150,60,105]) 
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-92, self.HEIGHT-140, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-68, self.HEIGHT-140, 20, 30),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-92, self.HEIGHT-106, 20, 50),  1, 0)
+            pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-68, self.HEIGHT-106, 20, 50),  1, 0)
+            pygame.draw.circle(self.game.screen, self.color, (self.WIDTH-96,self.HEIGHT-99), 4)
+            self.game.screen.blit(self.door1dark , (self.WIDTH-76,self.HEIGHT-111))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-76,self.HEIGHT-113))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-78,self.HEIGHT-111))
+            self.game.screen.blit(self.door1dark , (self.WIDTH-78,self.HEIGHT-113))
             self.game.screen.blit(self.door2 , (self.WIDTH-77,self.HEIGHT-112))  
 
         #room map
