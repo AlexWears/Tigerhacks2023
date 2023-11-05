@@ -237,10 +237,10 @@ class CameraScene(Scene):
             pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-92, self.HEIGHT-106, 20, 50),  1, 0)
             pygame.draw.rect(self.game.screen, self.color, pygame.Rect(self.WIDTH-68, self.HEIGHT-106, 20, 50),  1, 0)
             pygame.draw.circle(self.game.screen, self.color, (self.WIDTH-96,self.HEIGHT-99), 4)
-            self.game.screen.blit(self.door1dark , (self.WIDTH-76,self.HEIGHT-111))
-            self.game.screen.blit(self.door1dark , (self.WIDTH-76,self.HEIGHT-113))
-            self.game.screen.blit(self.door1dark , (self.WIDTH-78,self.HEIGHT-111))
-            self.game.screen.blit(self.door1dark , (self.WIDTH-78,self.HEIGHT-113))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-76,self.HEIGHT-111))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-76,self.HEIGHT-113))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-78,self.HEIGHT-111))
+            self.game.screen.blit(self.door2dark , (self.WIDTH-78,self.HEIGHT-113))
             self.game.screen.blit(self.door2 , (self.WIDTH-77,self.HEIGHT-112))  
 
         #room map
