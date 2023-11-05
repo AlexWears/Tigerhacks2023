@@ -78,20 +78,23 @@ class Game:
                 #blackout
                 if Settings.powerLevel <= 0:
                     pass
-            Settings.new_clock_time = pygame.time.get_ticks()
-            if Settings.new_clock_time >= Settings.old_clock_time + (1000*90):
-                Settings.old_clock_time = Settings.new_clock_time
-                if Settings.clock_time == 12:
-                    Settings.clock_time = 1
-                else: Settings.clock_time += 1
-                if Settings.clock_time == 6:
-                    Settings.new_clock_time = 0
-                    Settings.old_clock_time = 0
-                    #night change
-                    Settings.night += 1
-                    #win
-                    if Settings.night == 6:
-                        pass
+
+            if Settings.keep_track_of_time:
+                Settings.new_clock_time = pygame.time.get_ticks()
+                if Settings.new_clock_time >= Settings.old_clock_time + 900: # (1000*90):
+                    Settings.old_clock_time = Settings.new_clock_time
+                    if Settings.clock_time == 12:
+                        Settings.clock_time = 1
+                    else: Settings.clock_time += 1
+                    if Settings.clock_time >= 6 and Settings.clock_time != 12:
+                        Settings.new_clock_time = 0
+                        Settings.old_clock_time = 0
+                        #night change
+                        Settings.night += 1
+                        self.scene = NightDividerScene(self, "")
+                        #win
+                        if Settings.night == 6:
+                            pass
 
             #self.character_sprites.update()
 

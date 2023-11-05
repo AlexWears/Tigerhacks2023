@@ -10,6 +10,7 @@ class CameraScene(Scene):
         self.HEIGHT = Settings.height
         self.WIDTH = Settings.width
         self.difference = Settings.height + Settings.screen_bottom + Settings.screen_top
+        Settings.keep_track_of_time = True
 
         # white color 
         self.color = (255,255,255) 
