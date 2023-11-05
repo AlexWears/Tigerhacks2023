@@ -1,6 +1,5 @@
 import pygame
 from scene import Scene, Location
-from camera_scene import CameraScene
 from night_divider import NightDividerScene
 from settings import Settings
 

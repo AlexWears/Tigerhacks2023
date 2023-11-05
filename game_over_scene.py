@@ -1,6 +1,5 @@
 import pygame
 from scene import Scene, Location
-from camera_scene import CameraScene
 from settings import Settings
 from main_menu import MainMenuScene
 

@@ -1,5 +1,6 @@
 import pygame
 from scene import Scene, Location
+from win import WinScene
 from settings import Settings
 
 class CameraScene(Scene):
@@ -519,11 +520,14 @@ class CameraScene(Scene):
                 Settings.clock_time = 12
                 Settings.powerLevel = 100
                 Settings.new_day = True
-                if Settings.night == 6:
+                print(Settings.night)
+            if Settings.night >= 5:
+                self.game.character_sprites.empty()
+                self.game.scene = WinScene(self.game, "")
+                pygame.mixer.pause()
 
 
-
-                    pass
+                    
 
 
 

@@ -93,6 +93,7 @@ class Game:
                 self.scene = NightDividerScene(self, "")
 
             if Settings.powerLevel <= 0:
+                Settings.powerLevel = 10000000
                 game.scene = BlackoutScene(self, "")
 
     def create_characters(self):
